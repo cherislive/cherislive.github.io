@@ -1,7 +1,7 @@
 # Cheris blogs for Hexo
 
 ## 如何使用(How to use it)
-
+ 123142
 
 ## 博客特色功能:
 
