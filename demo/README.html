@@ -1,0 +1,33 @@
+<h1 id="Hacker"><a href="#Hacker" class="headerlink" title="Hacker"></a>Hacker</h1><p><strong> Hacker是一款专注于写作的简洁博客主题。在如此讲究复杂排版的趋势下，选择回归本源，专注于写作这件事。</strong><br>一开始是<a href="http://liuxinyu.me/">moyo</a>为Wordpress所创作的一个主题，由DaraW移植到Hexo。</p>
+<h2 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a>Demo</h2><p><a href="http://blog.daraw.cn/">DaraW</a></p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>在<code>themes</code>文件夹中创建文件夹<code>Hacker</code>，将主题文件都复制粘贴至<code>Hacker</code>文件夹，然后在hexo全局配置文件<code>_config.yml</code>中应用主题：</p>
+<pre><code class="yaml"><span class="attr">theme:</span> Hacker
+</code></pre>
+<p>这样就安装好了，开始享受吧~</p>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>在主题配置文件<code>_config.yml</code>中：</p>
+<pre><code class="yaml"><span class="comment"># duoshuo comment</span>
+<span class="attr">duoshuo:</span> <span class="literal">true</span>
+<span class="attr">duoshuo_name:</span>
+
+<span class="comment"># disqus comment</span>
+<span class="attr">disqus:</span> <span class="literal">false</span>
+<span class="attr">disqus_shortname:</span>
+
+<span class="comment"># google analytics</span>
+<span class="attr">googleTrackId:</span>
+</code></pre>
+<p><code>duoshuo</code>代表是否开启多说评论，设为<code>false</code>则为取消使用多说；<br><code>duoshuo_name</code>为你的多说用户ID，请不要使用别人的ID。</p>
+<p><code>disqus</code>代表是否开启disqus comment，设为<code>false</code>则为取消使用disqus；<br><code>disqus_shortname</code>为你的disqus site shortname。</p>
+<p><code>googleTrackId</code>为谷歌分析的个人ID，留空则为不使用谷歌分析。</p>
+<h2 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h2><h3 id="v0-2"><a href="#v0-2" class="headerlink" title="v0.2"></a>v0.2</h3><ul>
+<li>去除部分无用css和重复css</li>
+<li>修复无分类/标签依然出现icon的bug</li>
+<li>重写归档列表页面</li>
+<li>修改代码块样式</li>
+</ul>
+<h2 id="待办"><a href="#待办" class="headerlink" title="待办"></a>待办</h2><p>在考虑要不要添加下面的功能：</p>
+<ul>
+<li>夜间模式</li>
+<li>多说评论框样式</li>
+</ul>
+<h2 id="协议"><a href="#协议" class="headerlink" title="协议"></a>协议</h2><p>GPL(General Public License)</p>
