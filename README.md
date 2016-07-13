@@ -2,11 +2,6 @@
 
 ## 如何使用(How to use it)
 
-Simply clone this repository, and then run `jekyll serve` inside the directory.
-
-This theme is fully compliant with GH Pages and their dependencies.
-
-For extra info: [Using Jekyll with Pages](http://markyun.github.io/2015/welcome-to-jekyll/).
 
 ## 博客特色功能:
 
