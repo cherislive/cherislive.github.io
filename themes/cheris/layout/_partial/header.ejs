@@ -1,0 +1,13 @@
+<div class="header-nav">
+	<h1 class="fl site-logo"><a href="<%- config.root %>"><%= config.title %></a><span class="hidden"><% if (config.subtitle){ %><%= config.subtitle %><% } %></span></h1>
+	<menu class="site-menu fr">
+		<ul>
+			<% for (var i in theme.menu){ %>
+			<li  class="<%= url_for(theme.menu[i]) == url_for(path).substring(0, url_for(path).lastIndexOf('/') + 1) ? 'active' : ''   %>" ><a href="<%- theme.menu[i] %>"><%= __(i) %></a></li>
+			<% } %>
+			<% if (theme.rss){ %>
+	         <li><a class="btn-rss" href="<%- theme.rss %>" target="_blank">订阅我</a></li>
+	        <% } %>
+		</ul>
+	</menu>	
+</div>

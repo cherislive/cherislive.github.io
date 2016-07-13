@@ -1,0 +1,8 @@
+<% if (page.total > 1){ %>
+<div class="pager">
+<%- paginator({
+prev_text: "&lt;",
+next_text: "&gt;"
+}) %>
+</div>
+<% } %>

@@ -1,0 +1,29 @@
+<article class="<%= item.layout %> article-content">
+  <div class="article-desc fl">
+    <%- partial('post/title') %>    
+    <div class="entry">
+      <% if (item.excerpt){ %>
+        <%- item.excerpt %>
+      <% } %>
+    </div>
+    <% if (item.photos && item.photos.length){ %>
+      <%- partial('post/gallery') %>
+    <% } %>
+  </div>
+  <aside class="article-time fr">
+    <time datetime="<%= item.date.toDate().toISOString() %>">
+      <%= item.date.format(config.date_format_month) %>
+    </time>
+  </aside>  
+  <footer class="article-item-fn fl">
+      <div class="fl">
+        <%- partial('post/category') %>
+        <%- partial('post/tag') %>
+      </div>
+      <% if (index && (theme.duoshuo || theme.disqus)){ %>
+      <div class="fr">
+        <i class="iconfont">&#xe600;</i><a href="<%- item.permalink %>#comment"><%- __('comment') %></a>
+      </div>
+      <% } %>
+  </footer>
+</article>

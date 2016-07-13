@@ -1,0 +1,9 @@
+<div class="mod-profile">
+    <a href="/"></a>
+    <h1><% if (theme.username){ %><%= theme.username %><% } else { %><%= config.title %><% } %></h1>
+    <h2><% if (theme.userpost){ %><%= theme.userpost %><% } else if (config.subtitle){ %><%= config.subtitle %><% } %></h2>
+</div>
+<% page.posts.each(function(item){ %>
+  <%- partial('_partial/article', {item: item, index: true}) %>
+<% }); %>
+<%- partial('_partial/pagination') %>

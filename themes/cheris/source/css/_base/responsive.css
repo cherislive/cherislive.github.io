@@ -1,0 +1,14 @@
+@media (min-width: 768px) {
+    .article {
+        padding: 8rem 0;
+    }
+}
+
+@media (max-width: 768px) {
+    #primary {
+        padding-top: 20px;
+    }
+    .article {
+        padding: 2.5rem 0 !important;
+    }
+}

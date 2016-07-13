@@ -1,0 +1,149 @@
+/**
+* base style
+* Author: cheris
+* cherislive@163.com
+* Note: bace css for mobile
+* Version: 1.0.3
+* Data: 2016/07/08
+*/
+@charset "utf-8";
+body, 
+div,dl,dt,dd,ul,ol,li,
+h1,h2,h3,h4,h5,h6,pre,code,
+form,fieldset,legend,input,textarea,
+p,th,td,hr,button,
+footer,header,hgroup,menu,nav,section{margin:0;padding:0;}
+header,footer,section,article,aside,nav,hgroup,address,figure,figcaption,menu,details{display:block;}
+html,body{height:100%;}
+html{font-size: 62.5%;}
+html, body, button, input, select, textarea {font-family:'Microsoft Yahei','Helvetica Neue',Helvetica,Arial,sans-serif;}
+audio,
+canvas,
+progress,
+video{display: inline-block; /* 1 */ vertical-align: baseline; /* 2 */}
+audio:not([controls]){display: none; height: 0;}
+html,body,fieldset,img,iframe,abbr{border:0;}
+html{-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;}
+li{list-style-position:inside; color:#333;}
+ul li{list-style-type:circle;}
+ol li{color:#000;}
+label{cursor:default;}
+a,button{cursor:pointer;}
+a,a:hover{text-decoration:none;}
+iframe{	display: block;}
+input[type="submit"]{ border:none;}
+button,input,select,textarea{font-size: 100%;}
+button[disabled],html input[disabled]{cursor: default;}
+input[type="checkbox"],input[type="radio"] {padding:0;box-sizing:border-box; vertical-align:-2px; margin:0px 3px 0px 0px; cursor:pointer;}
+.inline-block {display: inline-block; *display: inline; zoom: 1;}
+::-webkit-input-placeholder{color:#ccc;}
+:-moz-placeholder{ color:#ccc;}
+::-moz-placeholder{color:#ccc;}
+:-ms-input-placeholder{color:#ccc;}
+a {outline: none;}
+.tl{ text-align:left !important;}
+.tc{ text-align:center;}
+.tr{ text-align:right;}
+.bc{ margin-left:auto; margin-right: auto;}
+.fl{ float:left;}
+.fr{ float:right;}
+.vm{ vertical-align:middle;}
+.vt{ vertical-align:top;}
+.pr{ position:relative;}
+.pa{ position:absolute;}
+.abs-right{ position: absolute; right:0;}
+.abs-left{ position: absolute; left:0;}
+[hidden],
+template,
+.hidden{display:none;}
+.fb{font-weight:bold;}
+.fn{font-weight:normal;}
+.no-unl{text-decoration:none;}
+.word-break{word-break:break-all; word-wrap:break-word;}
+.bg-none{ background:none !important;}
+.bn{ border:none !important;}
+.clearfix:after{ content:"."; display:block; height:0; clear:both; visibility:hidden; }
+button::-moz-focus-inner,
+input::-moz-focus-inner{border: 0; padding: 0;}
+input{line-height: normal;}
+input[type="checkbox"],
+input[type="radio"]{box-sizing: border-box; /* 1 */ padding: 0; /* 2 */}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button{height: auto;}
+input[type="search"]{-webkit-appearance: textfield; /* 1 */ box-sizing: content-box; /* 2 */}
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration{-webkit-appearance: none;}
+fieldset{border: 1px solid #c0c0c0; margin: 0 2px; padding: 0.35rem 0.625rem 0.75rem;}
+legend{border: 0; /* 1 */ padding: 0; /* 2 */}
+textarea{overflow: auto; resize:none;}
+optgroup{font-weight: bold;}
+b,
+strong{font-weight: bold;}
+svg:not(:root){overflow: hidden;}
+hr{box-sizing: content-box; height: 0;}
+dfn{font-style: italic;}
+small{font-size: 80%;}
+sub,
+sup{font-size: 75%; line-height: 0; position: relative; vertical-align: baseline;}
+sup{top: -0.5rem;}
+sub{bottom: -0.25rem;}
+figure{margin: 1rem 40px;}
+h1, h2, h3, h4, h5, h6{margin: 0 0 1rem 0; font-weight: bolder; line-height: 1.2;}
+h1{font-size: 2rem; margin: 0.67rem 0;}
+h2{font-size:1.8rem; margin: 0.67rem 0;}
+h3{font-size:1.6rem;}
+h4{font-size:1.4rem;}
+p{margin-top: 2rem; margin-bottom: 2rem;}
+hr{display: block; padding: 0; border: 0; height: 0; border-top: 1px solid #E0E0E0; box-sizing: content-box;}
+table{border-collapse:collapse;border-spacing:0;max-width: 100%; width: 100%;}
+table caption{padding: 5px; color: #333; background-color: #e5e5e5;}
+table th, table td{text-align: left; padding: .6rem; vertical-align: top;}
+table thead th{vertical-align: bottom; border-bottom: 1px solid #e5e5e5;}
+table tbody + tbody{border-top: 2px solid #e5e5e5;}
+table .table{background-color: #fff;}
+.table-bordered{border: 1px solid #e5e5e5;}
+.table-striped tbody tr:nth-of-type(odd){background-color: #f2f2f2;}
+img{vertical-align: bottom;}
+figure{margin: 0;}
+textarea{vertical-align: top; resize: vertical;}
+em{font-style: normal;}
+address{font-style: normal;}
+ins, mark{background: #ffa; color: #333;}
+blockquote{margin: 6rem 0; padding-left: 15px; line-height: 1.4; border-left: 4px solid #F03838;}
+blockquote p{margin: 0 0 .7rem 0;}
+blockquote small,
+blockquote cite{display: block; font-size: 80%; color: #616161; margin-top: .5rem;}
+blockquote cite:before{content: '- ';}
+blockquote p:last-of-type{margin-bottom: 0;}
+body{font-size: 1.4rem; color: #424242; line-height: 1.8; background-color: #fff; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; overflow-x: hidden;
+min-height: 100vh; overflow-x: hidden;}
+.font-yen{font-family:'Microsoft YaHei',STXihei,MingLiu;}
+*{word-wrap: break-word; box-sizing:border-box; -webkit-tap-highlight-color: transparent; outline: none;}
+*:before, *:after{box-sizing: border-box;}
+/*::-moz-selection{color: #fff; background-color: #f79292;}
+::selection{color: #fff; background-color: #f79292;}
+*/
+pre{font-family:Menlo,Monaco,Courier; word-break:normal; overflow:auto;}
+a{color: #5badf0;}
+a:hover{color: #00c0ff;}
+
+
+@font-face {
+  font-family: 'iconfont';
+  src: url('//at.alicdn.com/t/font_1468303406_4231398.eot'); /* IE9*/
+  src: url('//at.alicdn.com/t/font_1468303406_4231398.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('//at.alicdn.com/t/font_1468303406_4231398.woff') format('woff'), /* chrome、firefox */
+  url('//at.alicdn.com/t/font_1468303406_4231398.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url('//at.alicdn.com/t/font_1468303406_4231398.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+                    
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:1.6rem;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.02rem;
+  -moz-osx-font-smoothing: grayscale;
+}
+                   
+

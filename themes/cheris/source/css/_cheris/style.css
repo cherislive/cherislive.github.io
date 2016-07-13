@@ -1,0 +1,55 @@
+.mod-content{width: 100%; max-width:770px; margin:0 auto; padding:50px 0 0;}
+@media (max-width: 788px){.mod-content,.site-footer{padding-left:1.5rem; padding-right:1.5rem;}}
+/*header*/
+.header-nav{position:fixed; left:0; top:0; z-index:1000; width:100%; padding:1rem 2rem; background:rgba(255,255,255,.8);}
+.header-nav .site-logo{width:12rem; height:4rem; background:url(../images/logo.png) no-repeat 50% 50%; background-size:100% auto; text-indent:-9999px;}
+.header-nav .site-logo a{width:100%; height:100%; display:block;}
+.site-menu{padding:1.2rem 0; font-size:1.4rem;}
+.site-menu ul{list-style:none; padding:0 1rem;}
+.site-menu li{display:inline-block;}
+.site-menu li a{ display:inline-block; padding:0 1.5rem; height:3rem; line-height:3rem; color:#999; -webkit-transition: all 0.3s ease-out; transition: all 0.3s ease-out;}
+.site-menu li.active a,
+.site-menu li a:hover{color:#00C0FF;}
+.site-menu li a.btn-rss{padding:0 1.4rem; background:#5badf0; color:#fff; border-radius:3px; margin-left:1rem;}
+.site-menu li a.btn-rss:hover{background-color:#19bffb;}
+.mod-profile{width:80%; max-width:670px; margin:0 auto; padding:78px 0 30px; border-bottom:1px solid #eee; text-align:center; font-family:'Microsoft Yahei','Helvetica Neue',Helvetica,Arial,sans-serif;}
+.mod-profile a,
+.mod-profile span{width:80px; height:80px; display:block; margin:0 auto; background:url(../images/avatar.png) no-repeat 50% 50%; background-size:100% auto; border-radius:50%;}
+.mod-profile h1{font-size:1.8rem; padding:10px 0 0;}
+.mod-profile h2{font-size:1.2rem; font-weight:normal; color:#aaa;}
+.article .mod-profile span{width:160px; height:100px; background-image:url(../images/article.jpg); border-radius:10px; background-size:cover;}
+.site-footer{position: relative; text-align: center; padding-top:2rem; color: #9e9e9e;}
+.site-footer .site-info{color: #9e9e9e; font-size: 1.3rem; margin: 0.5rem 0;}
+/**/
+.article-content{position: relative; overflow:hidden; padding:2rem 0;}
+.article-content:after{content: '';position:absolute; left:0; bottom:0; width:100%; display:block; height: 1px; background-color: #e0e0e0;}
+.article-desc{width:100%; padding:0 6rem 0 0;}
+.article-title{font-size:1.8rem; line-height:1.3; margin:0;}
+.article-title a{display: block; color: #212121;}
+.article-title a:hover{color:#00C0FF;}
+.article-desc .entry{color:#aaa;}
+.article-desc .entry p{margin:0; padding:0.5rem 0;}
+.article-time{position:absolute; right:0; top:1.4rem; color: #bbb; font-size: 1.6rem; font-family:"Microsoft Yahei","Helvetica Neue",helvetica,Arial,sans-serif;}
+.article-item-fn{margin-bottom:-0.6rem; width:100%; font-size:1.2rem;}
+.article-item-fn .iconfont{font-size:1.4rem; padding-right:.4rem; color:#999;}
+.article-item-fn .fl span{padding-right:2rem;}
+.article-item-fn a{color:#999;}
+.article-item-fn a:hover{color: #00c0ff;}
+.post-main .post-tit{padding:50px 0 0;}
+.post-main .post-tit .article-title{padding:1rem 0 2rem; font-size:3rem; font-weight:normal; font-family:"Microsoft Yahei","Helvetica Neue",Helvetica,Arial,sans-serif;}
+.post-main .post-tit time{letter-spacing:0.2rem; color:#b2b9be; text-transform:uppercase;}
+.post-main .post-content{padding:1rem 0 0;}
+.article img{display:block; margin:1rem auto; max-width:100%;}
+
+.archive-content{padding:4rem 0 1rem;}
+.archive-content .archive{padding:1.5rem 0; border-bottom:1px solid #eee;}
+.archive-content .archive h3{margin:0; font-weight:normal;}
+.archive-content .archive a{color:#999;}
+.archive-content .archive time a{color:#bbb;}
+.archive-content .archive a:hover,
+.archive-content .archive time a:hover{color: #00c0ff;}
+.pager{padding:4rem 0 6rem;text-align:center;}
+.pager a,.pager span{ border: 1px solid #fff; display: inline-block; font-size:1.6rem; color:#999; font-weight: normal; height:5.8rem; line-height:5.8rem; margin: 0 0.5rem; padding: 0 0.9rem;}
+.pager a:hover {border: 1px solid #e0e0e0; color:#5badf0;}
+.pager .current{ background-color: #5badf0; border: 1px solid #5badf0;color: #fff;}
+.pager .prev,.pager .next{font-family:Simsun; font-weight: bold;vertical-align: top;}

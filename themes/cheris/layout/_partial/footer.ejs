@@ -1,0 +1,10 @@
+<p class="site-info">
+  Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a> and
+  Theme by <a href="http://www.cheris.cn" target="_blank">Cheris</a>
+  </br>
+  <% if (config.author){ %>
+  &copy; Copyright <%= new Date().getFullYear() %> <%= config.author %>
+  <% } else { %>
+  &copy; Copyright  <%= new Date().getFullYear() %> <%= config.title %>
+  <% } %>
+</p>
