@@ -1,54 +1,180 @@
-# Hacker
-** Hacker是一款专注于写作的简洁博客主题。在如此讲究复杂排版的趋势下，选择回归本源，专注于写作这件事。**  
-一开始是[moyo](http://liuxinyu.me/)为Wordpress所创作的一个主题，由DaraW移植到Hexo。
+# Cheris blogs for Hexo
 
-## Demo
-[DaraW](http://blog.daraw.cn/)
+## 如何使用(How to use it)
 
-## 安装
+Simply clone this repository, and then run `jekyll serve` inside the directory.
 
-在`themes`文件夹中创建文件夹`Hacker`，将主题文件都复制粘贴至`Hacker`文件夹，然后在hexo全局配置文件`_config.yml`中应用主题：
-```yaml
-theme: Hacker
-```
-这样就安装好了，开始享受吧~
+This theme is fully compliant with GH Pages and their dependencies.
 
-## 配置
-在主题配置文件`_config.yml`中：
+For extra info: [Using Jekyll with Pages](http://markyun.github.io/2015/welcome-to-jekyll/).
 
-```yaml
-# duoshuo comment
-duoshuo: true
-duoshuo_name:
+## 博客特色功能:
 
-# disqus comment
-disqus: false
-disqus_shortname:
-
-# google analytics
-googleTrackId:
-```
+* Pagination
+* Rss feed
+* Code Syntax Highlight
+* Author's profile with picture header
+* Twitter/Sina share buttons
+* Archive posts list under each post
+* Duoshuo comments
 
 
-`duoshuo`代表是否开启多说评论，设为`false`则为取消使用多说；  
-`duoshuo_name`为你的多说用户ID，请不要使用别人的ID。
+## 代码规范
+虽然这些细节是小事，但是却体现了一个coder的专业程度。
 
-`disqus`代表是否开启disqus comment，设为`false`则为取消使用disqus；  
-`disqus_shortname`为你的disqus site shortname。
 
-`googleTrackId`为谷歌分析的个人ID，留空则为不使用谷歌分析。
+### 标准文件结构
 
-## 更新
-### v0.2  
-* 去除部分无用css和重复css
-* 修复无分类/标签依然出现icon的bug
-* 重写归档列表页面
-* 修改代码块样式
+	[mainfolder]
+	 |--[js]		//js文件夹
+	 |   |-- main.js
+	 |--[style]		//所有样式相关的css和image
+	 |   |-- [image]	//主要image文件夹
+	 |   |    |-- img1.png
+	 |   |    ...
+	 |   |-- [style_name_a]	//皮肤A的文件夹
+	 |   |    |-- [image]	//皮肤A的image
+	 |   |    |-- style_name_a.css	//皮肤A的css文件
+	 |   |    ...
+	 |   |-- [style_name_b]	//皮肤B的文件夹
+	 |   |-- [style_name_c]	//皮肤C的文件夹
+	 |   |-- main.css	//主要css文件
+	 |--[audio]		//所有样式相关的audio音频文件
+	 |   |-- sound.mp3	//audio文件
+ 	 |-- index.html		//index文件
+ 	 |-- page1.html		//其他页面
+ 	 ...
+	  
+	  
+文件名全部英文小写，用下划线分隔。
 
-## 待办
-在考虑要不要添加下面的功能：
-* 夜间模式
-* 多说评论框样式
+	  
+	  
+### 标准html5代码
 
-## 协议
-GPL(General Public License)
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="author" content="CHERIS" />
+		<meta name="copyright" content="CHERIS.CN" />
+		<meta name="keywords" content="FED" />
+		<meta name="description" content="FED" />
+		
+		<title>FED 标准文档</title>
+		<link href="./style/main.css" rel="stylesheet" type="text/css" />
+	</head>
+	<body>
+		<!-- 注释 -->
+		<h1 id="title" class="title">FED 标准文档</h1>
+		<div>
+			<h3>Title</h3>
+			<p>
+				标准文档
+			</p>
+		</div>
+
+		<script type="text/javascript" src="./js/jq.min.js"></script>
+		<script type="text/javascript">
+
+			var J = new Jx();
+
+		</script>
+	</body>
+	</html>
+
+
+
+### 标准javascript代码
+
+	/**
+	 * === Javascript eXtension 模块 =========================================================================
+	 * Copyright (c) 2015 Cheris, All rights reserved.
+	 * http://www.cheris.cn/
+	 * Code licensed under the BSD License:
+ 	 * http://www.cheris.cn/license.txt
+	 * 
+	 * @version 2.0
+	 * @author	cheris <cherislive@163.com>
+	 * @description 描述文字
+	 * ---2015.6.1 ----------------------------
+	 */
+
+	/**
+	 * 注释
+	 */
+	Jx().$package('fed.cheris', function(J) {
+		var self = this,
+			$D = J.dom,
+			$E = J.event,
+			$H = J.http;
+
+		// 输出字符串'Hello world!'
+		J.out('Hello world!');
+
+		// 输出this === fed.cheris的判断结果
+		J.out(this === fed.cheris);
+	});
+
+
+### 标准css代码
+	
+	.copyright {
+	    margin: 50px 0 0 0;
+	    height: 50px;
+	
+	    font-family: Tahoma;
+	    font-size: 12px;
+	    text-align: center;
+	
+	    color: #999;
+	}
+	
+	.copyright a {
+	    text-decoration: none;
+	
+	    color: #999;
+	}
+	
+	/* 注释 */
+	.copyright a:hover,
+	.copyright a:focus {
+	    text-decoration: underline;
+	
+	    outline: none;
+	}
+
+### 标准版权声明代码
+
+  	<div class="copyright">Copyright &copy; <script>document.write(new Date().getFullYear());</script> <a href="http://www.cheris.cn/" target="_blank">cheris.cn</a>. All Rights Reserved.</div>
+
+
+### 标准访问统计代码
+
+	<!--Tencent Analytics-->
+	<script type="text/javascript" src="http://tajs.qq.com/stats?sId=39379138" charset="UTF-8"></script>
+	<!--Google Analytics-->
+	<script type="text/javascript">
+
+	  	var _gaq = _gaq || [];
+	  	_gaq.push(['_setAccount', 'UA-23019343-9']);
+	  	_gaq.push(['_trackPageview']);
+
+		(function() {
+		   	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+
+	</script>
+
+## 许可证(License)
+
+	MIT License.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sellc
+opies of the Software.
+
