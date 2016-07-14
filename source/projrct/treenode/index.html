@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>利润树demo</title>
+    <meta charset="utf-8">
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+    <script src="jquery-1.8.2.min.js"></script>
+    <script src="treenode.js"></script>
+    <style>
+      .treecon{position:absolute;left:9px;}
+      .treewarp{position:relative;}
+      .treecon-itemcon{position:relative;width:160px;height:50px;line-height:50px;color:white;border-radius:4px;text-align:center;font-size:18px;background:green;margin:4px 0px;}
+      .treecon-itemcon label{position:absolute;right:5px;color:white;font-weight:bold;}
+	  .treetooltip{position:absolute;width:154px;height:40px;line-height:40px;text-align:center;color:green;border:1px solid;z-index:100;background:white;}
+      .treecon-arrow{display:inline-block;height:5px;width:10px;}
+      .treecon-childwarp{position:absolute;right:-4px;font-size: 0px;line-height:0px;}
+      .treecon-childline{width:4px;background:green;position:absolute;}
+      .treecon-childlist{position:relative;}
+      /**/.treecon,.treecon *{-webkit-transition:height,top 100ms linear;}
+      div {display:inline-block;}
+    </style>
+  </head>
+  <body>
+  </body>
+  <script>
+    var _rawItemData = {itemData:'Root',childItems:[{itemData:"利润",childItems:[{itemData:"营业额",childItems:[{itemData:"正餐",childItems:[{itemData:"人数"},{itemData:"人均"}]},{itemData:"正餐",childItems:[{itemData:"人数"},{itemData:"人均"}]}]},{itemData:"毛利率",childItems:[{itemData:"原材料采购价格",childItems:[{itemData:"市场价格"},{itemData:"系统均价"},{itemData:"最高限价"}]},{itemData:"产品折前毛利率",childItems:[{itemData:"部门产品毛利率",childItems:[{itemData:"酒吧产品毛利率"},{itemData:"厨房产品毛利率"}]},{itemData:"产品销售",childItems:[{itemData:"部门销售额占比"},{itemData:"平均每单毛利率"}]}]}]},{itemData:"费用"}]},{itemData:"利润",childItems:[{itemData:"营业额",childItems:[{itemData:"正餐",childItems:[{itemData:"人数"},{itemData:"人均"}]},{itemData:"正餐",childItems:[{itemData:"人数"},{itemData:"人均"}]}]},{itemData:"毛利率",childItems:[{itemData:"原材料采购价格",childItems:[{itemData:"市场价格"},{itemData:"系统均价"},{itemData:"最高限价"}]},{itemData:"产品折前毛利率",childItems:[{itemData:"部门产品毛利率",childItems:[{itemData:"酒吧产品毛利率"},{itemData:"厨房产品毛利率"}]},{itemData:"产品销售",childItems:[{itemData:"部门销售额占比"},{itemData:"平均每单毛利率"}]}]}]},{itemData:"费用"}]}]};
+    window.initYzmTree(_rawItemData);
+  </script>
+</html>
