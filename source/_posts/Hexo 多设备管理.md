@@ -69,3 +69,18 @@ $ npm install hexo-deployer-git --save
 ```
 这里不再需要hexo init这条指令。
 
+## Hexo deploy失败？
+简单说，删掉根目录下的文件夹：.deploy_git，重新deploy就可以了。
+在git提交时，忽略.deploy_git、public文件就好了，其中public是每次hexo g新生成的静态博客文件，不需要同步。
+修改根目录下的.gitignore文件为：
+``` bash
+vim .gitignore
+```
+``` txt
+/.deploy_git
+/public
+```
+
+然后 ‘Esc':wq
+
+
