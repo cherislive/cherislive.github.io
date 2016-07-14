@@ -14,7 +14,7 @@
 .site-menu li a.btn-rss:hover{background-color:#19bffb;}
 .mod-profile{width:80%; max-width:670px; margin:0 auto; padding:78px 0 30px; border-bottom:1px solid #eee; text-align:center; font-family:'Microsoft Yahei','Helvetica Neue',Helvetica,Arial,sans-serif;}
 .mod-profile a,
-.mod-profile span{width:80px; height:80px; display:block; margin:0 auto; background:url(../images/avatar.png) no-repeat 50% 50%; background-size:100% auto; border-radius:50%;}
+.mod-profile span{width:80px; height:80px; display:block; margin:0 auto; background:url(../images/avatar.jpg) no-repeat 50% 50%; background-size:100% auto; border-radius:50%;}
 .mod-profile h1{font-size:1.8rem; padding:10px 0 0;}
 .mod-profile h2{font-size:1.2rem; font-weight:normal; color:#aaa;}
 .article .mod-profile span{width:160px; height:100px; background-image:url(../images/article.jpg); border-radius:10px; background-size:cover;}
