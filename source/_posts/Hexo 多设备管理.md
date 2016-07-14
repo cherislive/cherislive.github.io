@@ -31,6 +31,7 @@ $ npm install hexo
 $ hexo init 
 $ npm install 
 $ npm install hexo-deployer-git
+$ npm install hexo-deployer-git --save
 ```
 需要注意的是，npm install hexo之后 git branch 查看当前分支为 hexo 分支，hexo init之后，发现找不到分支了，原因如下：
 git是通过.git 文件来控制管理的，当在远端仓库clone项目时，项目中默认生成了一个.git 文件，然而操作hexo init 的时候，同样生成了一个.git 文件。
@@ -64,6 +65,7 @@ git clone git@github.com:example/example.github.io.git
 $ npm install hexo
 $ npm install
 $ npm install hexo-deployer-git
+$ npm install hexo-deployer-git --save
 ```
 这里不再需要hexo init这条指令。
 
