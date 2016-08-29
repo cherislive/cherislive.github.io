@@ -88,7 +88,7 @@ sup{font-size: 75%; line-height: 0; position: relative; vertical-align: baseline
 sup{top: -0.5rem;}
 sub{bottom: -0.25rem;}
 figure{margin: 1rem 40px;}
-h1, h2, h3, h4, h5, h6{margin: 0 0 1rem 0; font-weight: bolder; line-height: 1.2;}
+h1, h2, h3, h4, h5, h6{margin:2rem 0 0 0; font-weight: bolder; line-height: 1.2;}
 h1{font-size: 2rem; margin: 0.67rem 0;}
 h2{font-size:1.8rem; margin: 0.67rem 0;}
 h3{font-size:1.6rem;}
@@ -109,7 +109,7 @@ textarea{vertical-align: top; resize: vertical;}
 em{font-style: normal;}
 address{font-style: normal;}
 ins, mark{background: #ffa; color: #333;}
-blockquote{margin: 6rem 0; padding-left: 15px; line-height: 1.4; border-left: 4px solid #F03838;}
+blockquote{margin:2rem 0; padding-left: 15px; line-height: 1.4; border-left: 4px solid #F03838;}
 blockquote p{margin: 0 0 .7rem 0;}
 blockquote small,
 blockquote cite{display: block; font-size: 80%; color: #616161; margin-top: .5rem;}

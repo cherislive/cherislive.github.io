@@ -5,8 +5,8 @@
 			<% for (var i in theme.menu){ %>
 			<li  class="<%= url_for(theme.menu[i]) == url_for(path).substring(0, url_for(path).lastIndexOf('/') + 1) ? 'active' : ''   %>" ><a href="<%- theme.menu[i] %>"><%= __(i) %></a></li>
 			<% } %>
-			<% if (theme.rss){ %>
-	         <li><a class="btn-rss" href="<%- theme.rss %>" target="_blank">订阅我</a></li>
+			<% if (theme.github){ %>
+	         <li><a class="btn-quick" href="https://github.com/<%- theme.github %>" target="_blank">GitHub</a></li>
 	        <% } %>
 		</ul>
 	</menu>	

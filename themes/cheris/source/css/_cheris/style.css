@@ -10,8 +10,8 @@
 .site-menu li a{ display:inline-block; padding:0 1.5rem; height:3rem; line-height:3rem; color:#999; -webkit-transition: all 0.3s ease-out; transition: all 0.3s ease-out;}
 .site-menu li.active a,
 .site-menu li a:hover{color:#00C0FF;}
-.site-menu li a.btn-rss{padding:0 1.4rem; background:#5badf0; color:#fff; border-radius:3px; margin-left:1rem;}
-.site-menu li a.btn-rss:hover{background-color:#19bffb;}
+.site-menu li a.btn-quick{padding:0 1.4rem; background:#5badf0; color:#fff; border-radius:3px; margin-left:1rem;}
+.site-menu li a.btn-quick:hover{background-color:#19bffb;}
 .mod-profile{width:80%; max-width:670px; margin:0 auto; padding:78px 0 30px; border-bottom:1px solid #eee; text-align:center; font-family:'Microsoft Yahei','Helvetica Neue',Helvetica,Arial,sans-serif;}
 .mod-profile a,
 .mod-profile span{width:80px; height:80px; display:block; margin:0 auto; background:url(../images/avatar.jpg) no-repeat 50% 50%; background-size:100% auto; border-radius:50%;}
