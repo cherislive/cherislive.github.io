@@ -10,8 +10,8 @@ Git 是一个很强大的分布式版本控制系统。它不但适用于管理�
 在windows下安装git比较常用的有以下几种方式：
 * [Git 官方版本的安装](http://git-scm.com/download/win)
 * [GitHub for Windows](https://desktop.github.com/)
-* [TortoiseGit  1.8.12.0-64](http://cdn.github.cheris.com.cn/file/git/TortoiseGit-1.8.12.0-64bit.msi)(点击直接下载)
-* [TortoiseGit-LanguagePack-zh_CN  1.8.12.0-64](http://cdn.github.cheris.com.cn/file/git/TortoiseGit-LanguagePack-1.8.12.0-64bit-zh_CN.msi)(点击直接下载)
+* [TortoiseGit  1.8.12.0-64](//assets-github.cheris.com.cn/file/git/TortoiseGit-1.8.12.0-64bit.msi)(点击直接下载)
+* [TortoiseGit-LanguagePack-zh_CN  1.8.12.0-64](//assets-github.cheris.com.cn/file/git/TortoiseGit-LanguagePack-1.8.12.0-64bit-zh_CN.msi)(点击直接下载)
 
 ## 配置
 当安装完Git应该做的第一件事情就是设置用户名称和邮件地址。这样做很重要，因为每一个Git的提交都会使用这些信息，并且它会写入你的每一次提交中，不可更改：
@@ -29,8 +29,8 @@ $ git config --global user.email "username@example.com"
 $ git config --global user.email "username@users.noreply.github.com"
 ```
 
-![git速查表](http://cdn.github.cheris.com.cn/images/github/20140730150425_610.jpg) 
-![git常用命令](http://cdn.github.cheris.com.cn/images/github/git%E9%80%9F%E6%9F%A5%E8%A1%A8.png)
+![git速查表](//assets-github.cheris.com.cn/images/github/20140730150425_610.jpg) 
+![git常用命令](//assets-github.cheris.com.cn/images/github/git%E9%80%9F%E6%9F%A5%E8%A1%A8.png)
 ## 创建
 复制一个已创建的仓库:
 ``` bash

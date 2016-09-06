@@ -4,11 +4,12 @@ menu:
 
 # duoshuo comment
 duoshuo: true
-duoshuo_name: cherislive
+duoshuo_name: cheris-github
+duoshuo_embed: //assets-github.cheris.com.cn/js/duoshuo
 
 # disqus comment
 disqus: false
-disqus_shortname: 
+disqus_shortname: cheris-github
 
 # google analytics
 googleTrackId: UA-37234333-2
