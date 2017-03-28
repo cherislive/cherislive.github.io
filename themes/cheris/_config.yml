@@ -3,7 +3,7 @@ menu:
   Archives: /archives
 
 # duoshuo comment
-duoshuo: true
+duoshuo: false
 duoshuo_name: cheris-github
 duoshuo_embed: //assets-github.cheris.com.cn/js/duoshuo
 

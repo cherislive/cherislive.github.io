@@ -53,3 +53,4 @@
 .pager a:hover {border: 1px solid #e0e0e0; color:#5badf0;}
 .pager .current{ background-color: #5badf0; border: 1px solid #5badf0;color: #fff;}
 .pager .prev,.pager .next{font-family:Simsun; font-weight: bold;vertical-align: top;}
+figure.highlight{font-size:12px;}
