@@ -96,10 +96,13 @@ h3{font-size:1.6rem;}
 h4{font-size:1.4rem;}
 p{margin-top: 2rem; margin-bottom: 2rem;}
 hr{display: block; padding: 0; border: 0; height: 0; border-top: 1px solid #E0E0E0; box-sizing: content-box;}
-table{border-collapse:collapse;border-spacing:0;max-width: 100%; width: 100%;}
+table{border-collapse:collapse;border-spacing:0;max-width: 100%; width: 100%;border: 1px solid #e5e5e5;}
 table caption{padding: 5px; color: #333; background-color: #e5e5e5;}
-table th, table td{text-align: left; padding: .6rem; vertical-align: top;}
-table thead th{vertical-align: bottom; border-bottom: 1px solid #e5e5e5;}
+table th, table td{text-align: left; padding: .6rem; vertical-align: top; border: 1px solid #e5e5e5;}
+figure table{border:none;}
+figure table th,figure table td{border-top:none; border-left:none; border-right:none;}
+figure table td{border-bottom:none;}
+table thead th{vertical-align: bottom;}
 table tbody + tbody{border-top: 2px solid #e5e5e5;}
 table .table{background-color: #fff;}
 .table-bordered{border: 1px solid #e5e5e5;}
