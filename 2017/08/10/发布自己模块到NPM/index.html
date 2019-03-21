@@ -1,0 +1,132 @@
+<!DOCTYPE HTML>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+<meta charset="utf-8">
+
+<title>发布自己模块到NPM | Cheris | Front-End Engineer</title>
+<meta name="author" content="cheris">
+
+<meta name="description" content="cheris——努力成为业界优秀的前端分享博客！">
+
+
+<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta property="og:title" content="发布自己模块到NPM">
+<meta property="og:site_name" content="Cheris">
+
+  <meta property="og:image" content="undefined">
+
+<link href="/favicon.ico" rel="icon">
+<link rel="alternate" href="/atom.xml" title="Cheris" type="application/atom+xml">
+<link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+</head></html>
+<body>
+<header><div class="header-nav">
+	<h1 class="fl site-logo"><a href="/">Cheris</a><span class="hidden">Front-End Engineer</span></h1>
+	<menu class="site-menu fr">
+		<ul>
+			
+			<li class><a href="/">主页</a></li>
+			
+			<li class><a href="/archives">归档</a></li>
+			
+			
+	         <li><a class="btn-quick" href="https://github.com/cherislive" target="_blank">GitHub</a></li>
+	        
+		</ul>
+	</menu>	
+</div></header>
+<section class="mod-content">
+    <div class="post-content">
+      
+  
+<article class="post article">
+  <div class="post-main">
+  <div class="post-tit tc">
+    
+  
+    <h3 class="article-title"><span>发布自己模块到NPM</span></h3>
+  
+
+    <time datetime="2017-08-10T01:09:18.000Z">Aug -10, 2017</time>
+  </div>
+  
+  <div class="post-content">
+    <p>把自己写的 node.js 模块发布到 npm 开源社区。<br><a id="more"></a></p>
+<h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><p>node环境，<a href="https://www.npmjs.com/" target="_blank" rel="noopener">npm官网</a> 账号。</p>
+<h3 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm init</span><br></pre></td></tr></table></figure>
+<p>一路Enter<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;name&quot;: &quot;npm-name&quot;,</span><br><span class="line">  &quot;version&quot;: &quot;1.0.1&quot;,</span><br><span class="line">  &quot;description&quot;: &quot;desc...&quot;,</span><br><span class="line">  &quot;main&quot;: &quot;index.js&quot;,</span><br><span class="line">  &quot;scripts&quot;: &#123;</span><br><span class="line">    &quot;test&quot;: &quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;repository&quot;: &#123;</span><br><span class="line">    &quot;type&quot;: &quot;git&quot;,</span><br><span class="line">    &quot;url&quot;: &quot;git+https://github.com/cherislive/snb.git&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;keywords&quot;: [</span><br><span class="line">    &quot;keywords&quot;</span><br><span class="line">  ],</span><br><span class="line">  &quot;author&quot;: &quot;cheris&quot;,</span><br><span class="line">  &quot;license&quot;: &quot;ISC&quot;,</span><br><span class="line">  &quot;bugs&quot;: &#123;</span><br><span class="line">    &quot;url&quot;: &quot;https://github.com/cherislive/snb/issues&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;homepage&quot;: &quot;https://github.com/cherislive/snb#readme&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><strong>name</strong>:  模块名，之后发布之后就可以让用户npm install xxxx来引用你的开源模块了。</li>
+<li><strong>version</strong>:  版本号，语义版本号分为 <strong>X.Y.Z</strong> 三位，分别代表主版本号、次版本号和补丁版本号。当代码变更时，版本号按以下原则更新。</li>
+</ul>
+<ul>
+<li>如果只是修复bug，需要更新<strong>Z</strong>位。</li>
+<li>如果是新增了功能，但是向下兼容，需要更新<strong>Y</strong>位。</li>
+<li>如果有大变动，向下不兼容，需要更新<strong>X</strong>位。</li>
+</ul>
+<ul>
+<li><strong>description</strong>:  简单介绍自己的模块。</li>
+<li><strong>main</strong>:  入口文件，必要，当通过require(‘xxx’)时，是读取main里声明的文件。</li>
+<li><strong>test command</strong>:  测试命令。</li>
+<li><strong>git repository</strong>:  git仓库地址。</li>
+<li><strong>keywords</strong>:  关键词，可以通过npm搜索你填写的关键词找到你的模块。</li>
+<li><strong>author</strong>:  作者信息，可以之后编辑更详细一些。</li>
+<li><strong>license</strong>:  代码授权许可。</li>
+</ul>
+<h3 id="编写代码"><a href="#编写代码" class="headerlink" title="编写代码"></a>编写代码</h3><p>这里需要考虑不同的引入方式（import | require | src）。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">;(function (root, factory) &#123;</span><br><span class="line">  if (typeof exports === &apos;object&apos; &amp;&amp; typeof module !== &apos;undefined&apos;) &#123;</span><br><span class="line">    module.exports = factory()</span><br><span class="line">  &#125; else if (typeof define === &apos;function&apos; &amp;&amp; define.amd) &#123;</span><br><span class="line">    define([], factory)</span><br><span class="line">  &#125; else if (typeof exports === &apos;object&apos;) &#123;</span><br><span class="line">    exports[&apos;snb&apos;] = factory()</span><br><span class="line">  &#125; else &#123;</span><br><span class="line">    global[&apos;snb&apos;] = factory()</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)(this, function () &#123;</span><br><span class="line">  class snb &#123;</span><br><span class="line">    ...</span><br><span class="line">    &#125;</span><br><span class="line">  return snb</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<h3 id="发布模块"><a href="#发布模块" class="headerlink" title="发布模块"></a>发布模块</h3><p>1、 在npm  <a href="https://www.npmjs.com/signup" target="_blank" rel="noopener">注册用户</a>。<br>2、 在本地登录自己的npm账号 <code>$ npm login</code> 。<br>3、发布模块。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm publish</span><br><span class="line">+ snb@1.0.2 // 返回本条信息就是发布成功了</span><br></pre></td></tr></table></figure></p>
+<p>4、撤销发布自己发布过的某个版本代码。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm unpublish &lt;package&gt;@&lt;version&gt;</span><br></pre></td></tr></table></figure></p>
+<p>5、 其他命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 更新模块至最新版</span><br><span class="line">$ npm update &lt;package&gt;</span><br><span class="line"></span><br><span class="line">// 可以清空NPM本地缓存（使用了相同版本号发布新版本的情况）。</span><br><span class="line">$ npm cache clear</span><br></pre></td></tr></table></figure></p>
+<p>还可以给自己的模块的来个图片徽章，可以放在github仓库的README.md里可以让访问到这项目的人看到项目的状态<br><a href="http://shields.io/" target="_blank" rel="noopener">http://shields.io/</a><br><a href="https://nodei.co/" target="_blank" rel="noopener">https://nodei.co/</a></p>
+<center><br><a href="https://www.npmjs.com/package/snb" target="_blank" rel="noopener"><img src="https://img.shields.io/npm/v/snb.svg" alt="Version"></a>  <a href="https://www.npmjs.com/package/snb" target="_blank" rel="noopener"><img src="https://img.shields.io/npm/dm/snb.svg" alt="Download"></a>  <a href="https://github.com/cherislive/snb/network" target="_blank" rel="noopener"><img src="https://img.shields.io/github/forks/cherislive/snb.svg" alt="GitHub forks"></a>  <a href="https://github.com/cherislive/snb/stargazers" target="_blank" rel="noopener"><img src="https://img.shields.io/github/stars/cherislive/snb.svg" alt="GitHub stars"></a></center><br><center><br><a href="https://nodei.co/npm/snb/" target="_blank" rel="noopener"><img src="https://nodei.co/npm/snb.png?downloads=true&amp;downloadRank=true&amp;stars=true" alt="NPM"></a><br></center>
+
+  </div>  
+  <footer class="article-item-fn clearfix">
+      <div class="fl">
+        
+        
+      </div>
+      
+  </footer>
+  </div>
+  <aside class="article-top-meta fr">
+    <span class="posted-on">
+      
+    </span>
+  </aside>
+</article>
+
+
+
+
+
+    </div>
+</section>
+<footer id="colophon" class="site-footer" role="contentinfo"><p class="site-info">
+  Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a> and
+  Theme by <a href="https://www.cheris.cn" target="_blank">Cheris</a>
+  <br>
+  
+  &copy; Copyright 2019 cheris
+  
+</p>
+</footer>
+
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-37234333-2', 'auto');
+    ga('send', 'pageview');
+
+</script>
+
+
+<script type="text/javascript" src="//tajs.qq.com/stats?sId=58158453" charset="UTF-8"></script>
+
+</body>
+</html>

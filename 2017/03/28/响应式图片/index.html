@@ -1,0 +1,145 @@
+<!DOCTYPE HTML>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+<meta charset="utf-8">
+
+<title>响应式图片 | Cheris | Front-End Engineer</title>
+<meta name="author" content="cheris">
+
+<meta name="description" content="cheris——努力成为业界优秀的前端分享博客！">
+
+
+<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta property="og:title" content="响应式图片">
+<meta property="og:site_name" content="Cheris">
+
+  <meta property="og:image" content="undefined">
+
+<link href="/favicon.ico" rel="icon">
+<link rel="alternate" href="/atom.xml" title="Cheris" type="application/atom+xml">
+<link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+</head></html>
+<body>
+<header><div class="header-nav">
+	<h1 class="fl site-logo"><a href="/">Cheris</a><span class="hidden">Front-End Engineer</span></h1>
+	<menu class="site-menu fr">
+		<ul>
+			
+			<li class><a href="/">主页</a></li>
+			
+			<li class><a href="/archives">归档</a></li>
+			
+			
+	         <li><a class="btn-quick" href="https://github.com/cherislive" target="_blank">GitHub</a></li>
+	        
+		</ul>
+	</menu>	
+</div></header>
+<section class="mod-content">
+    <div class="post-content">
+      
+  
+<article class="post article">
+  <div class="post-main">
+  <div class="post-tit tc">
+    
+  
+    <h3 class="article-title"><span>响应式图片</span></h3>
+  
+
+    <time datetime="2017-03-28T03:30:10.000Z">Mar -28, 2017</time>
+  </div>
+  
+  <div class="post-content">
+    <p>早在2010年响应式网页的概念就已经出现，对于响应式网页设计，带来多设备适配的同时，也存在一些问题。使用同一图像源，要么在手机上加载一个巨大的图像，要么在一个大显示器上显示模糊、马赛克状的图像。<br><a id="more"></a><br>我们无法预测用户在何地以及如何访问我们的网站，所以我们需要浏览器自身根据情况选择最好的图像。</p>
+<p>img元素增加了两个新属性：srcset和sizes。</p>
+<ul>
+<li>srcset用来声明一组图像源，浏览器根据我们使用描述符指定的条件来选择图像。<br>描述符x表示图像的像素密度，描述符w表示图像的宽度；浏览器使用这些信息从列表中选择合适的图像。</li>
+<li>sizes属性为浏览器提供将要显示图像的尺寸信息，srcset使用w描述符时必须包含此属性。这种方法尤其适用于可变宽度的图像。</li>
+</ul>
+<blockquote>
+<p>基于设备象素比（device-pixel-radio）选择<br>基于viewport选择<br>基于Art direction（美术设计）选择<br>基于图像格式选择</p>
+</blockquote>
+<h2 id="相同质量不同图像的加载"><a href="#相同质量不同图像的加载" class="headerlink" title="相同质量不同图像的加载"></a>相同质量不同图像的加载</h2><h3 id="固定宽度图像：基于设备像素比选择"><a href="#固定宽度图像：基于设备像素比选择" class="headerlink" title="固定宽度图像：基于设备像素比选择"></a>固定宽度图像：基于设备像素比选择</h3><p>在 视网膜屏幕，4K显示器，UltraHD 等设备上，不仅要考虑屏幕的分辨率，而且需要考虑像素密度，它们都比相同尺寸的标准分辨率显示器填充了更多的像素。更多的像素=更清晰的图像。<br>有些图片不管屏幕尺寸，始终以固定宽度显示，如logo、头像，浏览器需要根据像素比来选择加载哪张图像。</p>
+<blockquote>
+<p><em>srcset</em> 属性列出了浏览器可选择加载的源图像池，由逗号（,）分隔，描述符x表示图像的设备像素比，浏览器根据运行环境选择实弹的图像。低版本浏览器忽略<em>srcset</em>属性。 </p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;img srcset=&quot;crest-300.jpg 1.5x, crest-400.jpg 2x&quot; src=&quot;crest-200.jpg&quot; alt=&quot;crest&quot; &gt;</span><br></pre></td></tr></table></figure>
+<p><img srcset="https://assets-github.cheris.com.cn/responsive/crest-300.jpg 1.5x, https://assets-github.cheris.com.cn/responsive/crest-400.jpg 2x" src="https://assets-github.cheris.com.cn/responsive/crest-200.jpg"></p>
+<h3 id="可变宽度的图像：基于viewport选择"><a href="#可变宽度的图像：基于viewport选择" class="headerlink" title="可变宽度的图像：基于viewport选择"></a>可变宽度的图像：基于viewport选择</h3><p>与内容相关的图片，通常也需要响应式，它们的大小往往随viewport改变。</p>
+<blockquote>
+<p> <em>srcset</em> 属性搭配描述符w，w告诉浏览器列表中每个图像的宽度。<br> <em>sizes</em> 属性列出了媒体列表，由逗号（,）分隔。第一个条件是媒体条件，第二个是源图尺寸值，此值决定图片的宽度，vw是唯一可用的css单位。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;img srcset=&quot;uswnt-480.jpg 480w,</span><br><span class="line">             uswnt-640.jpg 640w,</span><br><span class="line">             uswnt-960.jpg 960w,</span><br><span class="line">             uswnt-1280.jpg 1280w&quot; </span><br><span class="line">     sizes=&quot;(max-width: 400px) 100vw, </span><br><span class="line">            (max-width: 960px) 75vw, </span><br><span class="line">            640px&quot; src=&quot;uswnt-640.jpg&quot; alt=&quot;uswnt&quot;&gt;</span><br></pre></td></tr></table></figure>
+<p><img srcset="https://assets-github.cheris.com.cn/responsive/uswnt-480.jpg 480w,
+             https://assets-github.cheris.com.cn/responsive/uswnt-640.jpg 640w,
+             https://assets-github.cheris.com.cn/responsive/uswnt-960.jpg 960w,
+             https://assets-github.cheris.com.cn/responsive/uswnt-1280.jpg 1280w" sizes="(max-width: 400px) 100vw, 
+            (max-width: 960px) 75vw, 
+            640px" src="https://assets-github.cheris.com.cn/responsive/uswnt-640.jpg" alt="uswnt"></p>
+<p>浏览器在viewport宽度小于400像素时，使图像的宽度与viewport等宽。在viewport宽度小于960像素时，使图像的宽度为viewport宽度的75％。当viewport大于960像素时，使图像的宽度为640像素 。</p>
+<p>浏览器利用srcset和sizes信息来选择最符合规定条件的图像。如果浏览器的viewport是600像素，图像最可能以75vw的宽度显示。浏览器将尝试加载第一张大于450像素（600<em>0.75）的图像，也就是uswnt-480.jpg。如果我的是dpr为2的Retina显示屏，那么浏览器就会尝试加载第一张大于900像素（600</em>0.75*2）的图像，也就是uswnt-960.jpg。我们无法确定究竟显示哪张图像，因为每个浏览器根据我们提供的信息挑选适当图像的算法是有差异的。</p>
+<blockquote>
+<p>srcset和size列表是对浏览器的一个建议(hint)，而非指令。例如，设备像素比(dpr)为1.5的设备，亦可用1x也可用2x的图像，由浏览器根据其能力、网络等因素来决定。</p>
+</blockquote>
+<h2 id="不同宽度不同图像"><a href="#不同宽度不同图像" class="headerlink" title="不同宽度不同图像"></a>不同宽度不同图像</h2><p>不同宽度下显示稍微不同的图像，比如在较窄屏幕下仅显示图像的关键部分，那么要使用picture元素。</p>
+<h3 id="picture：基于Art-direction（美术设计）选择"><a href="#picture：基于Art-direction（美术设计）选择" class="headerlink" title="picture：基于Art direction（美术设计）选择"></a>picture：基于Art direction（美术设计）选择</h3><p>picture元素就像是图像和其源的容器。浏览器仍然需要img元素，用来表明需要加载图片，如果没有img，那么什么都不会渲染。source为浏览器提供了要显示图像的供选版本。基于美术设计选择的适用场景为：在一个特定的转效点（breakpoint）需要显示一个特定的图像。使用picture元素选择图像，不会有歧义。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;picture&gt;</span><br><span class="line">  &lt;source media=&quot;(min-width: 960px)&quot; srcset=&quot;ticker-tape-large.jpg&quot;&gt;</span><br><span class="line">  &lt;source media=&quot;(min-width: 575px)&quot; srcset=&quot;ticker-tape-medium.jpg&quot;&gt;</span><br><span class="line">  &lt;img src=&quot;ticker-tape-small.jpg&quot; alt=&quot;USWNT ticker-tape parade&quot;&gt;</span><br><span class="line">&lt;/picture&gt;</span><br></pre></td></tr></table></figure>
+<picture><br>  <source media="(min-width: 960px)" srcset="https://assets-github.cheris.com.cn/responsive/ticker-tape-large.jpg"><br>  <source media="(min-width: 575px)" srcset="https://assets-github.cheris.com.cn/responsive/ticker-tape-medium.jpg"><br>  <img src="https://assets-github.cheris.com.cn/responsive/ticker-tape-small.jpg" alt="USWNT ticker-tape parade"><br></picture>
+
+
+<p>在本例中，当viewport大于960像素时，会加载图像的风景模式版本（ticker-tape-large.jpg）。当viewport宽度大于575像素时，浏览器会加载图像的裁剪过的肖像模式版本（ticker-tape-medium.jpg）。而当宽度小于575像素时，加载的图像（ ticker-tape-small.jpg）已经被裁剪成焦点仅在一个球员上了。<br>picture元素是向后兼容的；不支持picture元素的浏览器将显示img。图像的所有标准属性（如alt），应该作用在img上而不是picture上。</p>
+<h3 id="source：基于图片格式选择"><a href="#source：基于图片格式选择" class="headerlink" title="source：基于图片格式选择"></a>source：基于图片格式选择</h3><p>最近几年出现了一些新的图片格式，这些新图像格式在较小的文件大小情况下保证了较好的图片质量。听起来还不错，但残酷的事实是没有一个新格式被所有浏览器支持。谷歌的WebP表现不错，但只有Chrome和Opera原声支持。JPEG-XR，最初被称为高清照片，是微软发布的一个专有图像格式，仅Internet Explorer支持。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;picture&gt;</span><br><span class="line">  &lt;source type=&quot;image/vnd.ms-photo&quot; src=&quot;wwc2017.jxr&quot;&gt;</span><br><span class="line">  &lt;source type=&quot;image/jp2&quot; src=&quot;wwc2017.jp2&quot;&gt;</span><br><span class="line">  &lt;source type=&quot;image/webp&quot; src=&quot;wwc2017.webp&quot;&gt;</span><br><span class="line">  &lt;img src=&quot;wwc2017.png&quot; alt=&quot;WWC 2015&quot;&gt;</span><br><span class="line">&lt;/picture&gt;</span><br></pre></td></tr></table></figure>
+<p>source的type属性用来指定每个图像的MIME类型，浏览器会选择第一个含有其支持的MIME类型的源。源的顺序是至关重要的，如果浏览器无法识别所有的图象类型，它会回退至原来的img元素。</p>
+
+  </div>  
+  <footer class="article-item-fn clearfix">
+      <div class="fl">
+        
+        
+      </div>
+      
+  </footer>
+  </div>
+  <aside class="article-top-meta fr">
+    <span class="posted-on">
+      
+    </span>
+  </aside>
+</article>
+
+
+
+
+
+    </div>
+</section>
+<footer id="colophon" class="site-footer" role="contentinfo"><p class="site-info">
+  Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a> and
+  Theme by <a href="https://www.cheris.cn" target="_blank">Cheris</a>
+  <br>
+  
+  &copy; Copyright 2019 cheris
+  
+</p>
+</footer>
+
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-37234333-2', 'auto');
+    ga('send', 'pageview');
+
+</script>
+
+
+<script type="text/javascript" src="//tajs.qq.com/stats?sId=58158453" charset="UTF-8"></script>
+
+</body>
+</html>

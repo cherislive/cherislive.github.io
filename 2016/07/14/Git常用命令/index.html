@@ -1,0 +1,175 @@
+<!DOCTYPE HTML>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+<meta charset="utf-8">
+
+<title>Git 的安装和使用 | Cheris | Front-End Engineer</title>
+<meta name="author" content="cheris">
+
+<meta name="description" content="cheris——努力成为业界优秀的前端分享博客！">
+
+
+<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta property="og:title" content="Git 的安装和使用">
+<meta property="og:site_name" content="Cheris">
+
+  <meta property="og:image" content="undefined">
+
+<link href="/favicon.ico" rel="icon">
+<link rel="alternate" href="/atom.xml" title="Cheris" type="application/atom+xml">
+<link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+</head></html>
+<body>
+<header><div class="header-nav">
+	<h1 class="fl site-logo"><a href="/">Cheris</a><span class="hidden">Front-End Engineer</span></h1>
+	<menu class="site-menu fr">
+		<ul>
+			
+			<li class><a href="/">主页</a></li>
+			
+			<li class><a href="/archives">归档</a></li>
+			
+			
+	         <li><a class="btn-quick" href="https://github.com/cherislive" target="_blank">GitHub</a></li>
+	        
+		</ul>
+	</menu>	
+</div></header>
+<section class="mod-content">
+    <div class="post-content">
+      
+  
+<article class="post article">
+  <div class="post-main">
+  <div class="post-tit tc">
+    
+  
+    <h3 class="article-title"><span>Git 的安装和使用</span></h3>
+  
+
+    <time datetime="2016-07-14T02:46:06.000Z">Jul -14, 2016</time>
+  </div>
+  
+  <div class="post-content">
+    <p>Git 是一个很强大的分布式版本控制系统。它不但适用于管理大型开源软件的源代码，管理私人的文档和源代码也有很多优势。<br><a id="more"></a></p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>在windows下安装git比较常用的有以下几种方式：</p>
+<ul>
+<li><a href="http://git-scm.com/download/win" target="_blank" rel="noopener">Git 官方版本的安装</a></li>
+<li><a href="https://desktop.github.com/" target="_blank" rel="noopener">GitHub for Windows</a></li>
+<li><a href="//assets-github.cheris.com.cn/file/git/TortoiseGit-1.8.12.0-64bit.msi">TortoiseGit  1.8.12.0-64</a>(点击直接下载)</li>
+<li><a href="//assets-github.cheris.com.cn/file/git/TortoiseGit-LanguagePack-1.8.12.0-64bit-zh_CN.msi">TortoiseGit-LanguagePack-zh_CN  1.8.12.0-64</a>(点击直接下载)</li>
+</ul>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>当安装完Git应该做的第一件事情就是设置用户名称和邮件地址。这样做很重要，因为每一个Git的提交都会使用这些信息，并且它会写入你的每一次提交中，不可更改：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"> git config --global user.name <span class="string">"username"</span></span><br><span class="line">$ git config --global user.email <span class="string">"username@example.com"</span></span><br></pre></td></tr></table></figure></p>
+<p>对于user.email，因为在GitHub的commits信息上是可见的，所以如果你不想让人知道你的email，可以Keeping your email address private:</p>
+<ol>
+<li>在GitHub右上方点击你的头像，选择”Settings”；</li>
+<li>在右边的”Personal settings”侧边栏选择”Emails”；</li>
+<li>选择”Keep my email address private”。</li>
+</ol>
+<p>这样，你就可以使用如下格式的email进行配置：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.email <span class="string">"username@users.noreply.github.com"</span></span><br></pre></td></tr></table></figure></p>
+<p><img src="//assets-github.cheris.com.cn/images/github/20140730150425_610.jpg" alt="git速查表"><br><img src="//assets-github.cheris.com.cn/images/github/git%E9%80%9F%E6%9F%A5%E8%A1%A8.png" alt="git常用命令"></p>
+<h2 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h2><p>复制一个已创建的仓库:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> git@github.com:example/example.github.io.git</span><br></pre></td></tr></table></figure></p>
+<p>创建一个新的本地仓库:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git init</span><br></pre></td></tr></table></figure></p>
+<h2 id="本地修改"><a href="#本地修改" class="headerlink" title="本地修改"></a>本地修改</h2><p>显示工作路径下已修改的文件：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git status</span><br></pre></td></tr></table></figure></p>
+<p>显示与上次提交版本文件的不同：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git diff</span><br></pre></td></tr></table></figure></p>
+<p>把当前所有修改添加到下次提交中：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git add</span><br></pre></td></tr></table></figure></p>
+<p>把对某个文件的修改添加到下次提交中：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git add -p &lt;file&gt;</span><br></pre></td></tr></table></figure></p>
+<p>提交本地的所有修改：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git commit -a</span><br></pre></td></tr></table></figure></p>
+<p>提交之前已标记的变化：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git commit</span><br></pre></td></tr></table></figure></p>
+<p>附加消息提交：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git commit -m <span class="string">'message here'</span></span><br></pre></td></tr></table></figure></p>
+<p>提交，并将提交时间设置为之前的某个日期:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit --date=<span class="string">"`date --date='n day ago'`"</span> -am <span class="string">"Commit Message"</span></span><br></pre></td></tr></table></figure></p>
+<p>修改上次提交<br>请勿修改已发布的提交记录!<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git commit --amend</span><br></pre></td></tr></table></figure></p>
+<p>把当前分支中未提交的修改移动到其他分支<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git stash</span><br><span class="line">git checkout branch2</span><br><span class="line">git stash pop</span><br></pre></td></tr></table></figure></p>
+<h2 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h2><p>从当前目录的所有文件中查找文本内容：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git grep <span class="string">"Hello"</span></span><br></pre></td></tr></table></figure></p>
+<p>在某一版本中搜索文本：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git grep <span class="string">"Hello"</span> v2.5</span><br></pre></td></tr></table></figure></p>
+<h2 id="提交历史"><a href="#提交历史" class="headerlink" title="提交历史"></a>提交历史</h2><p>从最新提交开始，显示所有的提交记录（显示hash， 作者信息，提交的标题和时间）：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">log</span></span><br></pre></td></tr></table></figure></p>
+<p>显示所有提交（仅显示提交的hash和message）：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">log</span> --oneline</span><br></pre></td></tr></table></figure></p>
+<p>显示某个用户的所有提交：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">log</span> --author=<span class="string">"username"</span></span><br></pre></td></tr></table></figure></p>
+<p>显示某个文件的所有修改：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">log</span> -p &lt;file&gt;</span><br></pre></td></tr></table></figure></p>
+<p>谁，在什么时间，修改了文件的什么内容：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git blame &lt;file&gt;</span><br></pre></td></tr></table></figure></p>
+<p>#分支与标签<br>列出所有的分支：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git branch</span><br></pre></td></tr></table></figure></p>
+<p>切换分支：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout &lt;branch&gt;</span><br></pre></td></tr></table></figure></p>
+<p>创建并切换到新分支:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout -b &lt;branch&gt;</span><br></pre></td></tr></table></figure></p>
+<p>基于当前分支创建新分支：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git branch &lt;new-branch&gt;</span><br></pre></td></tr></table></figure></p>
+<p>基于远程分支创建新的可追溯的分支：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git branch --track &lt;new-branch&gt; &lt;remote-branch&gt;</span><br></pre></td></tr></table></figure></p>
+<p>删除本地分支:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git branch -d &lt;branch&gt;</span><br></pre></td></tr></table></figure></p>
+<p>给当前版本打标签：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git tag &lt;tag-name&gt;</span><br></pre></td></tr></table></figure></p>
+<h2 id="更新与发布"><a href="#更新与发布" class="headerlink" title="更新与发布"></a>更新与发布</h2><p>列出当前配置的远程端：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git remote -v</span><br></pre></td></tr></table></figure></p>
+<p>显示远程端的信息：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git remote show &lt;remote&gt;</span><br></pre></td></tr></table></figure></p>
+<p>添加新的远程端：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git remote add &lt;remote&gt; &lt;url&gt;</span><br></pre></td></tr></table></figure></p>
+<p>下载远程端版本，但不合并到HEAD中：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git fetch &lt;remote&gt;</span><br></pre></td></tr></table></figure></p>
+<p>下载远程端版本，并自动与HEAD版本合并：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git remote pull &lt;remote&gt; &lt;url&gt;</span><br></pre></td></tr></table></figure></p>
+<p>将远程端版本合并到本地版本中：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git pull origin master</span><br></pre></td></tr></table></figure></p>
+<p>将本地版本发布到远程端：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git push remote &lt;remote&gt; &lt;branch&gt;</span><br></pre></td></tr></table></figure></p>
+<p>删除远程端分支：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git push &lt;remote&gt; :&lt;branch&gt; (since Git v1.5.0)</span><br><span class="line">或</span><br><span class="line">git push &lt;remote&gt; --delete &lt;branch&gt; (since Git v1.7.0)</span><br></pre></td></tr></table></figure></p>
+<p>发布标签:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git push --tags</span><br></pre></td></tr></table></figure></p>
+<h2 id="合并与重置"><a href="#合并与重置" class="headerlink" title="合并与重置"></a>合并与重置</h2><p>将分支合并到当前HEAD中：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git merge &lt;branch&gt;</span><br></pre></td></tr></table></figure></p>
+<p>将当前HEAD版本重置到分支中:<br>请勿重置已发布的提交!<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git rebase &lt;branch&gt;</span><br></pre></td></tr></table></figure></p>
+<p>退出重置:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git rebase --abort</span><br></pre></td></tr></table></figure></p>
+<p>解决冲突后继续重置：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git rebase --<span class="built_in">continue</span></span><br></pre></td></tr></table></figure></p>
+<p>使用配置好的merge tool 解决冲突：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git mergetool</span><br></pre></td></tr></table></figure></p>
+<p>在编辑器中手动解决冲突后，标记文件为已解决冲突<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git add &lt;resolved-file&gt;</span><br><span class="line">$ git rm &lt;resolved-file&gt;</span><br></pre></td></tr></table></figure></p>
+<h2 id="撤销"><a href="#撤销" class="headerlink" title="撤销"></a>撤销</h2><p>放弃工作目录下的所有修改：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git reset --hard HEAD</span><br></pre></td></tr></table></figure></p>
+<p>移除缓存区的所有文件（i.e. 撤销上次git add）:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git reset HEAD</span><br></pre></td></tr></table></figure></p>
+<p>放弃某个文件的所有本地修改：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout HEAD &lt;file&gt;</span><br></pre></td></tr></table></figure></p>
+<p>重置一个提交（通过创建一个截然不同的新提交）<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git revert &lt;commit&gt;</span><br></pre></td></tr></table></figure></p>
+<p>将HEAD重置到指定的版本，并抛弃该版本之后的所有修改：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git reset --hard &lt;commit&gt;</span><br></pre></td></tr></table></figure></p>
+<p>将HEAD重置到上一次提交的版本，并将之后的修改标记为未添加到缓存区的修改：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git reset &lt;commit&gt;</span><br></pre></td></tr></table></figure></p>
+<p>将HEAD重置到上一次提交的版本，并保留未提交的本地修改：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git reset --keep &lt;commit&gt;</span><br></pre></td></tr></table></figure></p>
+
+  </div>  
+  <footer class="article-item-fn clearfix">
+      <div class="fl">
+        
+  
+  <span class="post-categories"><i class="iconfont">&#xe601;</i><a href="/categories/前端/">前端</a></span>
+
+        
+  
+  <span class="post-tags"><i class="iconfont">&#xe602;</i><a href="/tags/Git/">Git</a></span>
+
+      </div>
+      
+  </footer>
+  </div>
+  <aside class="article-top-meta fr">
+    <span class="posted-on">
+      
+    </span>
+  </aside>
+</article>
+
+
+
+
+
+    </div>
+</section>
+<footer id="colophon" class="site-footer" role="contentinfo"><p class="site-info">
+  Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a> and
+  Theme by <a href="https://www.cheris.cn" target="_blank">Cheris</a>
+  <br>
+  
+  &copy; Copyright 2019 cheris
+  
+</p>
+</footer>
+
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-37234333-2', 'auto');
+    ga('send', 'pageview');
+
+</script>
+
+
+<script type="text/javascript" src="//tajs.qq.com/stats?sId=58158453" charset="UTF-8"></script>
+
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE HTML>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+<meta charset="utf-8">
+
+<title>抛弃jquery，你仍然可以 | Cheris | Front-End Engineer</title>
+<meta name="author" content="cheris">
+
+<meta name="description" content="cheris——努力成为业界优秀的前端分享博客！">
+
+
+<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta property="og:title" content="抛弃jquery，你仍然可以">
+<meta property="og:site_name" content="Cheris">
+
+  <meta property="og:image" content="undefined">
+
+<link href="/favicon.ico" rel="icon">
+<link rel="alternate" href="/atom.xml" title="Cheris" type="application/atom+xml">
+<link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+</head></html>
+<body>
+<header><div class="header-nav">
+	<h1 class="fl site-logo"><a href="/">Cheris</a><span class="hidden">Front-End Engineer</span></h1>
+	<menu class="site-menu fr">
+		<ul>
+			
+			<li class><a href="/">主页</a></li>
+			
+			<li class><a href="/archives">归档</a></li>
+			
+			
+	         <li><a class="btn-quick" href="https://github.com/cherislive" target="_blank">GitHub</a></li>
+	        
+		</ul>
+	</menu>	
+</div></header>
+<section class="mod-content">
+    <div class="post-content">
+      
+  
+<article class="post article">
+  <div class="post-main">
+  <div class="post-tit tc">
+    
+  
+    <h3 class="article-title"><span>抛弃jquery，你仍然可以</span></h3>
+  
+
+    <time datetime="2016-10-20T08:06:06.000Z">Oct -20, 2016</time>
+  </div>
+  
+  <div class="post-content">
+    <p>框架能够让我们走的更快，但只有了解原生的JS才能让我们走的更远。这里分享一些基础东西，这将可能帮你深入纯 JavaScript的世界，让你能更简单的做出决定——jQuery在你下个工程中是否需要。<br><a id="more"></a></p>
+<blockquote>
+<p>从来没有一个js库能像jQuery这般影响着这个行业，她不仅改变了人们对JavaScript的传统认知，更让人们给予了她一种新的语言地位。jQuery在前端开发领域可真是被宠坏了，她的关注指数是js的两倍，有人说是她成就了js，也有人说是它害了js，而无论舆论偏向何方，我们都必须正视这门传奇的库。</p>
+</blockquote>
+<h3 id="Document-Ready-事件"><a href="#Document-Ready-事件" class="headerlink" title="Document Ready 事件"></a>Document Ready 事件</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// do something</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>JavaScript 示例:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">document.addEventListener(&quot;DOMContentLoaded&quot;, function() &#123;</span><br><span class="line">  // do something</span><br><span class="line">&#125;, false);</span><br></pre></td></tr></table></figure></p>
+<h3 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var el = $(&apos;div&apos;);</span><br></pre></td></tr></table></figure>
+<p>JavaScript 示例:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var el = document.querySelector(&quot;div&quot;);</span><br><span class="line">// var el = document.querySelectorAll(&quot;.container div&quot;);</span><br><span class="line">var navigation = document.querySelector(&quot;nav&quot;);</span><br><span class="line">var links = navigation.querySelectorAll(&quot;a&quot;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// This gives us simple dollar function and event binding</span><br><span class="line">var $ = document.querySelectorAll.bind(document);</span><br><span class="line">Element.prototype.on = Element.prototype.addEventListener;</span><br><span class="line"></span><br><span class="line">// This is how you use it</span><br><span class="line">$(&quot;.element&quot;)[0].on(&quot;touchstart&quot;, handleTouch, false);</span><br></pre></td></tr></table></figure></p>
+<h3 id="遍历DOM"><a href="#遍历DOM" class="headerlink" title="遍历DOM"></a>遍历DOM</h3><p>JavaScript 示例:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">// Getting the parent node</span><br><span class="line">var parent = document.querySelector(&quot;div&quot;).parentNode;</span><br><span class="line"></span><br><span class="line">// Getting the next node</span><br><span class="line">var next = document.querySelector(&quot;div&quot;).nextSibling;</span><br><span class="line"></span><br><span class="line">// Getting the previous node</span><br><span class="line">var next = document.querySelector(&quot;div&quot;).previousSibling;</span><br><span class="line"></span><br><span class="line">// Getting the first child element</span><br><span class="line">var child = document.querySelector(&quot;div&quot;).children[0];</span><br><span class="line"></span><br><span class="line">// Getting the last child</span><br><span class="line">var last = document.querySelector(&quot;div&quot;).lastElementChild;</span><br></pre></td></tr></table></figure></p>
+<h3 id="添加和删除样式名（class-name"><a href="#添加和删除样式名（class-name" class="headerlink" title="添加和删除样式名（class name)"></a>添加和删除样式名（class name)</h3><p>JavaScript 示例:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var element = document.querySelector(&quot;.some-class&quot;);</span><br><span class="line">// Give class &quot;foo&quot; to the element</span><br><span class="line">element.className = &quot;foo&quot;;</span><br><span class="line">element.className += &quot; foo&quot;;</span><br></pre></td></tr></table></figure></p>
+<p>removeClass:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// removeClass, takes two params: element and classname</span><br><span class="line">function removeClass(el, cls) &#123;</span><br><span class="line">  var reg = new RegExp(&quot;(\\s|^)&quot; + cls + &quot;(\\s|$)&quot;);</span><br><span class="line">  el.className = el.className.replace(reg, &quot; &quot;).replace(/(^\s*)|(\s*$)/g,&quot;&quot;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">removeClass(element, &quot;foo&quot;);</span><br></pre></td></tr></table></figure></p>
+<p>hasClass:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">// hasClass, takes two params: element and classname</span><br><span class="line">function hasClass(el, cls) &#123;</span><br><span class="line">  return el.className &amp;&amp; new RegExp(&quot;(\\s|^)&quot; + cls + &quot;(\\s|$)&quot;).test(el.className);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// Check if an element has class &quot;foo&quot;</span><br><span class="line">if (hasClass(element, &quot;foo&quot;)) &#123;</span><br><span class="line">  // Show an alert message if it does</span><br><span class="line">  alert(&quot;Element has the class!&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="HTML5-的-classList-API-简介"><a href="#HTML5-的-classList-API-简介" class="headerlink" title="HTML5 的  classList API 简介"></a>HTML5 的  classList API 简介</h3><p>检测出浏览器是否支持<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if (&quot;classList&quot; in document.documentElement) &#123;</span><br><span class="line">  // classList is supported, now do something with it</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>JavaScript 示例:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// Adding a class</span><br><span class="line">element.classList.add(&quot;bar&quot;);</span><br><span class="line"></span><br><span class="line">// Removing a class</span><br><span class="line">element.classList.remove(&quot;foo&quot;);</span><br><span class="line"></span><br><span class="line">// Checking if has a class</span><br><span class="line">element.classList.contains(&quot;foo&quot;);</span><br><span class="line"></span><br><span class="line">// Toggle a class</span><br><span class="line">element.classList.toggle(&quot;active&quot;);</span><br></pre></td></tr></table></figure></p>
+<p>代码对比：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;test&quot; class=&quot;one two three&quot;&gt;&lt;/div&gt;</span><br><span class="line">var element = document.querySelector(&quot;#test&quot;);</span><br><span class="line">addClass(element, &quot;two&quot;);</span><br><span class="line">removeClass(element, &quot;four&quot;);</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;test&quot; class=&quot;one two three&quot;&gt;&lt;/div&gt;</span><br><span class="line">var element = document.querySelector(&quot;#test&quot;);</span><br><span class="line">element.classList.add(&quot;two&quot;);</span><br><span class="line">element.classList.remove(&quot;four&quot;);</span><br></pre></td></tr></table></figure>
+<h3 id="事件监听器"><a href="#事件监听器" class="headerlink" title="事件监听器"></a>事件监听器</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">element.addEventListener(&quot;click&quot;, function() &#123;</span><br><span class="line">  alert(&quot;You clicked&quot;);</span><br><span class="line">&#125;, false);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">// Select all links</span><br><span class="line">var links = document.querySelectorAll(&quot;a&quot;);</span><br><span class="line"></span><br><span class="line">// For each link element</span><br><span class="line">links.forEach.call(links, function(el) &#123;</span><br><span class="line"></span><br><span class="line">  // Add event listener</span><br><span class="line">  el.addEventListener(&quot;click&quot;, function(event) &#123;</span><br><span class="line">    event.preventDefault();</span><br><span class="line">    alert(&quot;You clicked&quot;);</span><br><span class="line">  &#125;, false);</span><br><span class="line"></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">var button =  document.querySelector(&quot;#test&quot;);</span><br><span class="line">var object = &#123;</span><br><span class="line">  init: function() &#123;</span><br><span class="line">    button.addEventListener(&quot;click&quot;, this, false);</span><br><span class="line">    button.addEventListener(&quot;touchstart&quot;, this, false);</span><br><span class="line">  &#125;,</span><br><span class="line">  handleEvent: function(e) &#123;</span><br><span class="line">    switch(e.type) &#123;</span><br><span class="line">      case &quot;click&quot;:</span><br><span class="line">        this.action();</span><br><span class="line">        break;</span><br><span class="line">      case &quot;touchstart&quot;:</span><br><span class="line">        this.action();</span><br><span class="line">        break;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  action: function() &#123;</span><br><span class="line">    alert(&quot;Clicked or touched!&quot;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">// Init</span><br><span class="line">object.init();</span><br></pre></td></tr></table></figure>
+<h3 id="操作DOM"><a href="#操作DOM" class="headerlink" title="操作DOM"></a>操作DOM</h3><p>用纯JavaScript来操作DOM刚开始听起来就像一个可怕的想法，但比使用jQuery其实它并没有复杂多少。下面，我们会有一个例子，选择DOM的元素，克隆它，用JavaScript来操作克隆的样式，然后用被操纵的东西来替代原始的元素。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// Select an element</span><br><span class="line">var element = document.querySelector(&quot;.class&quot;);</span><br><span class="line"></span><br><span class="line">// Clone it</span><br><span class="line">var clone = element.cloneNode(true);</span><br><span class="line"></span><br><span class="line">// Do some manipulation off the DOM</span><br><span class="line">clone.style.background = &quot;#000&quot;;</span><br><span class="line"></span><br><span class="line">// Replaces the original element with the new cloned one</span><br><span class="line">element.parentNode.replaceChild(clone, element);</span><br></pre></td></tr></table></figure></p>
+<p>在DOM中，如果除了附加在<body>中新创建div，你不想替代任何东西，那么你可以这样做：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">document.body.appendChild(clone);</span><br></pre></td></tr></table></figure></body></p>
+<h3 id="在JS中决定响应图片的最大宽度"><a href="#在JS中决定响应图片的最大宽度" class="headerlink" title="在JS中决定响应图片的最大宽度"></a>在JS中决定响应图片的最大宽度</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var maxWidth = img.naturalWidth;</span><br></pre></td></tr></table></figure>
+<p>这将会给我们提供最大宽度100%像素的图片，且IE9,Chrome,Firefox,Safari和Opera都支持这个方法。我们也可以保留这个特性然后通过加载图片到内存中添加老浏览器的支持：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">// Get image&apos;s max-width:100%; in pixels</span><br><span class="line">function getMaxWidth(img) &#123;</span><br><span class="line">  var maxWidth;</span><br><span class="line"></span><br><span class="line">  // Check if naturalWidth is supported</span><br><span class="line">  if (img.naturalWidth !== undefined) &#123;</span><br><span class="line">    maxWidth = img.naturalWidth;</span><br><span class="line"></span><br><span class="line">  // Not supported, use in-memory solution as fallback</span><br><span class="line">  &#125; else &#123;</span><br><span class="line">    var image = new Image();</span><br><span class="line">    image.src = img.src;</span><br><span class="line">    maxWidth = image.width;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  // Return the max-width</span><br><span class="line">  return maxWidth;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>你应该注意到在检查宽度前，图片必须完全被加载。这是我们一直使用的用于确定它们有尺寸的方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function hasDimensions(img) &#123;</span><br><span class="line">  return !!((img.complete &amp;&amp; typeof img.naturalWidth !== &quot;undefined&quot;) || img.width);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="判断一个元素是否在视图窗口中"><a href="#判断一个元素是否在视图窗口中" class="headerlink" title="判断一个元素是否在视图窗口中:"></a>判断一个元素是否在视图窗口中:</h3><p>通过使用getBoundingClientRect方法，你可以获取页面中任何元素的位置。以下是一个简单的函数来表明它有多简单和多强大。这个函数有一个参数，那就是你想要检查的元素。当元素为可见时，函数将返回true：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// Determine if an element is in the visible viewport</span><br><span class="line">function isInViewport(element) &#123;</span><br><span class="line">  var rect = element.getBoundingClientRect();</span><br><span class="line">  var html = document.documentElement;</span><br><span class="line">  return (</span><br><span class="line">    rect.top &gt;= 0 &amp;&amp;</span><br><span class="line">    rect.left &gt;= 0 &amp;&amp;</span><br><span class="line">    rect.bottom &lt;= (window.innerHeight || html.clientHeight) &amp;&amp;</span><br><span class="line">    rect.right &lt;= (window.innerWidth || html.clientWidth)</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+  </div>  
+  <footer class="article-item-fn clearfix">
+      <div class="fl">
+        
+        
+  
+  <span class="post-tags"><i class="iconfont">&#xe602;</i><a href="/tags/JavaScript/">JavaScript</a></span>
+
+      </div>
+      
+  </footer>
+  </div>
+  <aside class="article-top-meta fr">
+    <span class="posted-on">
+      
+    </span>
+  </aside>
+</article>
+
+
+
+
+
+    </div>
+</section>
+<footer id="colophon" class="site-footer" role="contentinfo"><p class="site-info">
+  Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a> and
+  Theme by <a href="https://www.cheris.cn" target="_blank">Cheris</a>
+  <br>
+  
+  &copy; Copyright 2019 cheris
+  
+</p>
+</footer>
+
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-37234333-2', 'auto');
+    ga('send', 'pageview');
+
+</script>
+
+
+<script type="text/javascript" src="//tajs.qq.com/stats?sId=58158453" charset="UTF-8"></script>
+
+</body>
+</html>

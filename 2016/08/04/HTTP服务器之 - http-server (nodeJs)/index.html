@@ -1,0 +1,128 @@
+<!DOCTYPE HTML>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+<meta charset="utf-8">
+
+<title>HTTP服务器之 - http-server (nodeJs) | Cheris | Front-End Engineer</title>
+<meta name="author" content="cheris">
+
+<meta name="description" content="cheris——努力成为业界优秀的前端分享博客！">
+
+
+<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta property="og:title" content="HTTP服务器之 - http-server (nodeJs)">
+<meta property="og:site_name" content="Cheris">
+
+  <meta property="og:image" content="undefined">
+
+<link href="/favicon.ico" rel="icon">
+<link rel="alternate" href="/atom.xml" title="Cheris" type="application/atom+xml">
+<link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+</head></html>
+<body>
+<header><div class="header-nav">
+	<h1 class="fl site-logo"><a href="/">Cheris</a><span class="hidden">Front-End Engineer</span></h1>
+	<menu class="site-menu fr">
+		<ul>
+			
+			<li class><a href="/">主页</a></li>
+			
+			<li class><a href="/archives">归档</a></li>
+			
+			
+	         <li><a class="btn-quick" href="https://github.com/cherislive" target="_blank">GitHub</a></li>
+	        
+		</ul>
+	</menu>	
+</div></header>
+<section class="mod-content">
+    <div class="post-content">
+      
+  
+<article class="post article">
+  <div class="post-main">
+  <div class="post-tit tc">
+    
+  
+    <h3 class="article-title"><span>HTTP服务器之 - http-server (nodeJs)</span></h3>
+  
+
+    <time datetime="2016-08-04T07:03:15.000Z">Aug -04, 2016</time>
+  </div>
+  
+  <div class="post-content">
+    <p>Sublime Text3 是一款非常优秀的跨平台编辑器，工欲善其事必先利其器，作为一名开发同学，这里简单记录下Sublime Text3的配置。<br><a id="more"></a></p>
+<h2 id="安装命令："><a href="#安装命令：" class="headerlink" title="安装命令："></a>安装命令：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g  http-server</span><br></pre></td></tr></table></figure>
+<h2 id="运行命令："><a href="#运行命令：" class="headerlink" title="运行命令："></a>运行命令：</h2><p>切换到项目目录下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ http-server [path] [options]</span><br></pre></td></tr></table></figure></p>
+<h2 id="使用于package-json"><a href="#使用于package-json" class="headerlink" title="使用于package.json"></a>使用于package.json</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&quot;scripts&quot;: &#123;</span><br><span class="line">    &quot;start&quot;: &quot;http-server -a 0.0.0.0 -p 8000&quot;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>参数配置：<br>-p 端口号 (默认 8080)</p>
+<p>-a IP 地址 (默认 0.0.0.0)</p>
+<p>-d 显示目录列表 (默认 ‘True’)</p>
+<p>-i 显示 autoIndex (默认 ‘True’)</p>
+<p>-e or –ext 如果没有提供默认的文件扩展名(默认 ‘html’)</p>
+<p>-s or –silent 禁止日志信息输出</p>
+<p>–cors 启用 CORS via the Access-Control-Allow-Origin header</p>
+<p>-o 在开始服务后打开浏览器<br>-c 为 cache-control max-age header 设置Cache time(秒) , e.g. -c10 for 10 seconds (defaults to ‘3600’). 禁用 caching, 则使用 -c-1.<br>-U 或 –utc 使用UTC time 格式化log消息</p>
+<p>-P or –proxy Proxies all requests which can’t be resolved locally to the given url. e.g.: -P <a href="http://someurl.com" target="_blank" rel="noopener">http://someurl.com</a></p>
+<p>-S or –ssl 启用 https</p>
+<p>-C or –cert ssl cert 文件路径 (default: cert.pem)</p>
+<p>-K or –key Path to ssl key file (default: key.pem).</p>
+<p>-r or –robots Provide a /robots.txt (whose content defaults to ‘User-agent: *\nDisallow: /‘)</p>
+<p>-h or –help 打印以上列表并退出 </p>
+
+  </div>  
+  <footer class="article-item-fn clearfix">
+      <div class="fl">
+        
+  
+  <span class="post-categories"><i class="iconfont">&#xe601;</i><a href="/categories/nodeJs/">nodeJs</a></span>
+
+        
+  
+  <span class="post-tags"><i class="iconfont">&#xe602;</i><a href="/tags/HTTP服务器/">HTTP服务器</a></span>
+
+      </div>
+      
+  </footer>
+  </div>
+  <aside class="article-top-meta fr">
+    <span class="posted-on">
+      
+    </span>
+  </aside>
+</article>
+
+
+
+
+
+    </div>
+</section>
+<footer id="colophon" class="site-footer" role="contentinfo"><p class="site-info">
+  Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a> and
+  Theme by <a href="https://www.cheris.cn" target="_blank">Cheris</a>
+  <br>
+  
+  &copy; Copyright 2019 cheris
+  
+</p>
+</footer>
+
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-37234333-2', 'auto');
+    ga('send', 'pageview');
+
+</script>
+
+
+<script type="text/javascript" src="//tajs.qq.com/stats?sId=58158453" charset="UTF-8"></script>
+
+</body>
+</html>

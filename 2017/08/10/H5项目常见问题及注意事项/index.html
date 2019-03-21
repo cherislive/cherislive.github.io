@@ -1,0 +1,174 @@
+<!DOCTYPE HTML>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+<meta charset="utf-8">
+
+<title>H5项目常见问题及注意事项 | Cheris | Front-End Engineer</title>
+<meta name="author" content="cheris">
+
+<meta name="description" content="cheris——努力成为业界优秀的前端分享博客！">
+
+
+<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta property="og:title" content="H5项目常见问题及注意事项">
+<meta property="og:site_name" content="Cheris">
+
+  <meta property="og:image" content="undefined">
+
+<link href="/favicon.ico" rel="icon">
+<link rel="alternate" href="/atom.xml" title="Cheris" type="application/atom+xml">
+<link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+</head></html>
+<body>
+<header><div class="header-nav">
+	<h1 class="fl site-logo"><a href="/">Cheris</a><span class="hidden">Front-End Engineer</span></h1>
+	<menu class="site-menu fr">
+		<ul>
+			
+			<li class><a href="/">主页</a></li>
+			
+			<li class><a href="/archives">归档</a></li>
+			
+			
+	         <li><a class="btn-quick" href="https://github.com/cherislive" target="_blank">GitHub</a></li>
+	        
+		</ul>
+	</menu>	
+</div></header>
+<section class="mod-content">
+    <div class="post-content">
+      
+  
+<article class="post article">
+  <div class="post-main">
+  <div class="post-tit tc">
+    
+  
+    <h3 class="article-title"><span>H5项目常见问题及注意事项</span></h3>
+  
+
+    <time datetime="2017-08-10T06:48:13.000Z">Aug -10, 2017</time>
+  </div>
+  
+  <div class="post-content">
+    <p>当我们谈论前端性能 我们在谈论什么？加载性能、渲染性能、用户交互相应速度、动画流畅、DOM操作无闪烁。。。</p>
+<a id="more"></a>
+<h4 id="Meta-基础知识："><a href="#Meta-基础知识：" class="headerlink" title="Meta 基础知识："></a>Meta 基础知识：</h4><ul>
+<li><p>viewport</p>
+<p>1、JS动态判断</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui&quot;&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p> width：设置viewport宽度，为一个正整数，或字符串‘device-width’；<br> height：设置viewport高度，一般不设置，自适应；<br> initial-scale：默认缩放比例，为一个数字，可以带小数；<br> minimum-scale：允许用户最小缩放比例，为一个数字，可以带小数；<br> maximum-scale：允许用户最大缩放比例，为一个数字，可以带小数；<br> user-scalable：是否允许手动缩放。</p>
+</blockquote>
+<p>2、JS动态计算<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">var winWidth=  parseInt(window.screen.width);</span><br><span class="line">var phoneScale = winWidth/640;</span><br><span class="line">var ua = navigator.userAgent;</span><br><span class="line">if (/Android (\d+\.\d+)/.test(ua))&#123;</span><br><span class="line">  var version = parseFloat(RegExp.$1);</span><br><span class="line">  if(version&gt;2.3)&#123;</span><br><span class="line">    document.write(&apos;&lt;meta name=&quot;viewport&quot; content=&quot;width=640, minimum-scale = &apos;+phoneScale+&apos;, maximum-scale = &apos;+phoneScale+&apos;, target-densitydpi=device-dpi&quot;&gt;&apos;);</span><br><span class="line">  &#125;else&#123;</span><br><span class="line">    document.write(&apos;&lt;meta name=&quot;viewport&quot; content=&quot;width=640, target-densitydpi=device-dpi&quot;&gt;&apos;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125; else &#123;</span><br><span class="line">  document.write(&apos;&lt;meta name=&quot;viewport&quot; content=&quot;width=640, user-scalable=no, target-densitydpi=device-dpi&quot;&gt;&apos;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>其他<strong>meta</strong>标签<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 横竖屏设置 --&gt;</span><br><span class="line">&lt;meta name=&quot;screen-orientation&quot; content=&quot;portrait&quot;/&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 可隐藏地址栏，仅针对IOS的Safari（注：IOS7.0版本以后，safari上已看不到效果），和minimal-ui效果类似 --&gt;</span><br><span class="line">&lt;meta name=&quot;apple-mobile-web-app-capable&quot; content=&quot;yes&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 仅针对IOS的Safari顶端状态条的样式（可选default/black/black-translucent ） --&gt;</span><br><span class="line">&lt;meta name=&quot;apple-mobile-web-app-status-bar-style&quot; content=&quot;black&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 格式检测 数字识别为电话号码/对邮箱地址的识别/跳转至地图 --&gt;</span><br><span class="line">&lt;meta name=&quot;format-detection&quot; content=&quot;telephone=no, email=no, adress=no&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- UC强制全屏 --&gt;</span><br><span class="line">&lt;meta name=&quot;full-screen&quot; content=&quot;yes&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- QQ强制全屏 --&gt;</span><br><span class="line">&lt;meta name=&quot;x5-fullscreen&quot; content=&quot;true&quot;&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>更多 <a href="https://segmentfault.com/a/1190000002407912" target="_blank" rel="noopener"> &lt; meta &gt; 知识获取</a>。</p>
+</blockquote>
+<h3 id="微信单页面修改title"><a href="#微信单页面修改title" class="headerlink" title="微信单页面修改title"></a>微信单页面修改title</h3><p><em>问题：当页面载入时，微信顶部 title 获取并显示，之后怎么用JS修改 title ，无效。</em><br><em>这个是针对IOS出现的 hack ，Android是有效的。 貌似是IOS的webview没有监听titlechange事件。 目前的处理就是使用重新载入页面的形式来唤醒页面的title有关事件。</em><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">// 解决iOS设备修改title不起作用的bug</span><br><span class="line">function set_title (title) &#123;</span><br><span class="line">  document.title = title;</span><br><span class="line">  if (!ua.is_idevice) return;</span><br><span class="line">  // 随便访问iframe访问一个网页，title就可以刷新了</span><br><span class="line">  var $iframe = $(&quot;&lt;iframe style=&apos;display:none;&apos; src=&apos;/favicon.ico&apos;&gt;&lt;/iframe&gt;&quot;);</span><br><span class="line">  $iframe.on(&apos;load&apos;,function() &#123;</span><br><span class="line">    setTimeout(function() &#123;</span><br><span class="line">      $iframe.off(&apos;load&apos;).remove();</span><br><span class="line">    &#125;, 0);</span><br><span class="line">  &#125;).appendTo($body);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="点击事件-Click"><a href="#点击事件-Click" class="headerlink" title="点击事件 Click"></a>点击事件 <strong>Click</strong></h3><p>click事件，移动端click事件有300ms的延迟（有很多PC页面没有做移动端分辨率兼容==》需要放大缩小来浏览==》移动端常用的放大缩小方案：双击==》区分单双击==》设置300ms延迟）<br>移动端解决方案：<br>引入zepto,用tap事件代替click;<br>tap不是原生事件，touchstart/touchmove/touchend<br>基本条件：从触摸到离开时间间隔短，从起点到终点距离间隔小</p>
+<p>点击态：<br>方案1：用  :active 伪类  缺点：滚动的时候也会触发样式<br>方案2：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">// 点击事件带点击态</span><br><span class="line">$el.on(&apos;tap&apos;,function(e)&#123;</span><br><span class="line">    var $target = $(e.target);</span><br><span class="line">    var timer=null;</span><br><span class="line">    $target.addClass(&apos;active&apos;);</span><br><span class="line">    timer = setTimeout(function()&#123;</span><br><span class="line">        $target.removeClass(&apos;active&apos;);</span><br><span class="line">        clearTimeout(timer);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="滚动"><a href="#滚动" class="headerlink" title="滚动"></a>滚动</h3><p>全局滚动：滚动节点在body 节点或者更顶层<br>局部滚动:  滚动条在body 下的某一个dom 节点上</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Col1</th>
+<th style="text-align:left">iOS</th>
+<th style="text-align:left">Android</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">全局滚动</td>
+<td style="text-align:left">默认支持</td>
+<td style="text-align:left">定制版本较多，表现各异</td>
+</tr>
+<tr>
+<td style="text-align:left">局部滚动</td>
+<td style="text-align:left">默认没有滚动条，且滑动起来干涩</td>
+<td style="text-align:left">-</td>
+</tr>
+<tr>
+<td style="text-align:left">弹性滚动</td>
+<td style="text-align:left">支持</td>
+<td style="text-align:left">默认没有弹性滚动效果</td>
+</tr>
+<tr>
+<td style="text-align:left">-webkit-overflow-scrolling</td>
+<td style="text-align:left">支持</td>
+<td style="text-align:left">默认浏览器不支持 Android版chrome支持</td>
+</tr>
+<tr>
+<td style="text-align:left">触发出界</td>
+<td style="text-align:left"><strong>全局滚动：</strong>滚动到页面顶部（或底部）时继续向下（向上）滑动，就会出现;<br> <strong>局部滚动：</strong>滚动到页面顶部（或底部）时，手指离开停下，再继续向下（向上）滑动，就会出现</td>
+<td style="text-align:left">-</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p>iOS局部滚动使用弹性滚动效果</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 建议：将属性挂在body上，可以避免很多奇怪的bug</span><br><span class="line">body&#123;--webkit-overflow-scrolling: touch;&#125;</span><br><span class="line"></span><br><span class="line">/*局部dom节点*/</span><br><span class="line">.scroll-el&#123;overflow:auto;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>流畅滚动的军规：</strong></p>
+<blockquote>
+<p>body上加上 -webkit-overfllow-scrolling:touch<br>iOS 尽量使用局部滚动<br>iOS 引进ScrollFix 避免出界<br>Android下尽量使用全局滚动</p>
+</blockquote>
+</li>
+</ul>
+
+  </div>  
+  <footer class="article-item-fn clearfix">
+      <div class="fl">
+        
+        
+      </div>
+      
+  </footer>
+  </div>
+  <aside class="article-top-meta fr">
+    <span class="posted-on">
+      
+    </span>
+  </aside>
+</article>
+
+
+
+
+
+    </div>
+</section>
+<footer id="colophon" class="site-footer" role="contentinfo"><p class="site-info">
+  Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a> and
+  Theme by <a href="https://www.cheris.cn" target="_blank">Cheris</a>
+  <br>
+  
+  &copy; Copyright 2019 cheris
+  
+</p>
+</footer>
+
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-37234333-2', 'auto');
+    ga('send', 'pageview');
+
+</script>
+
+
+<script type="text/javascript" src="//tajs.qq.com/stats?sId=58158453" charset="UTF-8"></script>
+
+</body>
+</html>

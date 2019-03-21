@@ -1,0 +1,133 @@
+<!DOCTYPE HTML>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+<meta charset="utf-8">
+
+<title>搭建一个Hexo 博客 | Cheris | Front-End Engineer</title>
+<meta name="author" content="cheris">
+
+<meta name="description" content="cheris——努力成为业界优秀的前端分享博客！">
+
+
+<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta property="og:title" content="搭建一个Hexo 博客">
+<meta property="og:site_name" content="Cheris">
+
+  <meta property="og:image" content="undefined">
+
+<link href="/favicon.ico" rel="icon">
+<link rel="alternate" href="/atom.xml" title="Cheris" type="application/atom+xml">
+<link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+</head></html>
+<body>
+<header><div class="header-nav">
+	<h1 class="fl site-logo"><a href="/">Cheris</a><span class="hidden">Front-End Engineer</span></h1>
+	<menu class="site-menu fr">
+		<ul>
+			
+			<li class><a href="/">主页</a></li>
+			
+			<li class><a href="/archives">归档</a></li>
+			
+			
+	         <li><a class="btn-quick" href="https://github.com/cherislive" target="_blank">GitHub</a></li>
+	        
+		</ul>
+	</menu>	
+</div></header>
+<section class="mod-content">
+    <div class="post-content">
+      
+  
+<article class="post article">
+  <div class="post-main">
+  <div class="post-tit tc">
+    
+  
+    <h3 class="article-title"><span>搭建一个Hexo 博客</span></h3>
+  
+
+    <time datetime="2016-07-13T08:06:16.000Z">Jul -13, 2016</time>
+  </div>
+  
+  <div class="post-content">
+    <p>博客使用 Github + Hexo 实现并托管整个网站<br><a id="more"></a><br>Hexo 是一个优秀的静态博客生成器。至于怎么怎么好，这里就不在啰嗦了。</p>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
+<li><a href="https://git-scm.com/book/zh/v2" target="_blank" rel="noopener">Git</a></li>
+<li><a href="https://github.com/" target="_blank" rel="noopener">Github</a></li>
+<li><a href="https://pages.github.com/" target="_blank" rel="noopener">Github Pages</a></li>
+<li><a href="http://nodejs.org/" target="_blank" rel="noopener">nodejs</a></li>
+<li><a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a></li>
+</ul>
+<h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><p>安装前确保电脑上已经安装：<a href="http://nodejs.org/" target="_blank" rel="noopener">nodejs</a>、<a href="https://git-scm.com/book/zh/v2" target="_blank" rel="noopener">Git</a>。<br>使用npm 安装Hexo</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br><span class="line">$ hexo init &lt;folder&gt;</span><br><span class="line">$ cd &lt;folder&gt;</span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
+<p>可以在项目目录下看到如下结构的文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">├── _config.yml</span><br><span class="line">├── package.json</span><br><span class="line">├── scaffolds</span><br><span class="line">├── source</span><br><span class="line">|   ├── _drafts</span><br><span class="line">|   └── _posts</span><br><span class="line">└── themes</span><br></pre></td></tr></table></figure>
+<p>打开_config.yml文件，你就可以配置自己的博客了。<a href="https://hexo.io/docs/configuration.html" target="_blank" rel="noopener">官方文档</a><br>站点配置用到两个文件，一个是对整站的配置 hexo_config.yml ，另一个是对主题的配置 hexo\themes\config.yml 。<br>hexo_config.yml 文件如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><span class="line"># Hexo Configuration</span><br><span class="line">## Docs: http://zespia.tw/hexo/docs/configure.html</span><br><span class="line">## Source: https://github.com/tommy351/hexo/</span><br><span class="line"></span><br><span class="line"># Site 这里的配置，哪项配置反映在哪里，可以参考我的博客</span><br><span class="line">title: Xiaomiya&apos;s blog #站点名，站点左上角</span><br><span class="line">subtitle: Walk steps step by step #副标题，站点左上角</span><br><span class="line">description: Walk steps step by step #给搜索引擎看的，对站点的描述，可以自定义</span><br><span class="line">author: xiaomiya#在站点左下角可以看到</span><br><span class="line">email: #你的联系邮箱</span><br><span class="line">language: zh-CN #中国人嘛，用中文</span><br><span class="line"></span><br><span class="line"># URL #这项暂不配置，绑定域名后，欲创建sitemap.xml需要配置该项</span><br><span class="line">## If your site is put in a subdirectory, set url as &apos;http://yoursite.com/child&apos; and root as &apos;/child/&apos;</span><br><span class="line">url: http://yoursite.com</span><br><span class="line">root: /</span><br><span class="line">permalink: :year/:month/:day/:title/</span><br><span class="line">tag_dir: tags</span><br><span class="line">archive_dir: archives</span><br><span class="line">category_dir: categories</span><br><span class="line"></span><br><span class="line"># Writing 文章布局、写作格式的定义，不修改</span><br><span class="line">new_post_name: :title.md # File name of new posts</span><br><span class="line">default_layout: post</span><br><span class="line">auto_spacing: false # Add spaces between asian characters and western characters</span><br><span class="line">titlecase: false # Transform title into titlecase</span><br><span class="line">max_open_file: 100</span><br><span class="line">filename_case: 0</span><br><span class="line">highlight:</span><br><span class="line">  enable: true</span><br><span class="line">  backtick_code_block: true</span><br><span class="line">  line_number: true</span><br><span class="line">  tab_replace:</span><br><span class="line"></span><br><span class="line"># Category &amp; Tag</span><br><span class="line">default_category: uncategorized</span><br><span class="line">category_map:</span><br><span class="line">tag_map:</span><br><span class="line"></span><br><span class="line"># Archives 默认值为2，这里都修改为1，相应页面就只会列出标题，而非全文</span><br><span class="line">## 2: Enable pagination</span><br><span class="line">## 1: Disable pagination</span><br><span class="line">## 0: Fully Disable</span><br><span class="line">archive: 1</span><br><span class="line">category: 1</span><br><span class="line">tag: 1</span><br><span class="line"></span><br><span class="line"># Server 不修改</span><br><span class="line">## Hexo uses Connect as a server</span><br><span class="line">## You can customize the logger format as defined in</span><br><span class="line">## http://www.senchalabs.org/connect/logger.html</span><br><span class="line">port: 4000</span><br><span class="line">logger: false</span><br><span class="line">logger_format:</span><br><span class="line"></span><br><span class="line"># Date / Time format 日期格式，不修改</span><br><span class="line">## Hexo uses Moment.js to parse and display date</span><br><span class="line">## You can customize the date format as defined in</span><br><span class="line">## http://momentjs.com/docs/#/displaying/format/</span><br><span class="line">date_format: MMM D YYYY</span><br><span class="line">time_format: H:mm:ss</span><br><span class="line"></span><br><span class="line"># Pagination 每页显示文章数，可以自定义，我将10改成了5</span><br><span class="line">## Set per_page to 0 to disable pagination</span><br><span class="line">per_page: 5</span><br><span class="line">pagination_dir: page</span><br><span class="line"></span><br><span class="line"># Disqus Disqus插件，我们会替换成“多说”，不修改</span><br><span class="line">disqus_shortname:</span><br><span class="line"></span><br><span class="line"># Extensions 这里配置站点所用主题和插件，暂默认，后面会介绍怎么修改</span><br><span class="line">## Plugins: https://github.com/tommy351/hexo/wiki/Plugins</span><br><span class="line">## Themes: https://github.com/tommy351/hexo/wiki/Themes</span><br><span class="line">theme: light</span><br><span class="line">exclude_generator:</span><br><span class="line">plugins:</span><br><span class="line">- hexo-generator-feed</span><br><span class="line">- hexo-generator-sitemap</span><br><span class="line"></span><br><span class="line"># Deployment 站点部署到github要配置，上一节中已经讲过</span><br><span class="line">## Docs: http://zespia.tw/hexo/docs/deploy.html</span><br><span class="line">deploy:</span><br><span class="line">  type: github</span><br><span class="line">  repository: https://github.com/xiaomiya/xiaomiya.github.com.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+<p>  现在可以 hexo generate ， hexo server ，打开 localhost:4000 查看效果了。</p>
+<p>hexo\themes\config.yml</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">menu: #站点右上角导航栏，暂时默认，后面介绍修改</span><br><span class="line">  首页: /</span><br><span class="line">  存档: /archives</span><br><span class="line">  关于: /about</span><br><span class="line">  ToDo: /todolist</span><br><span class="line">  </span><br><span class="line"></span><br><span class="line">widgets: #站点右边栏，暂时默认，后面介绍修改和添加</span><br><span class="line">- search</span><br><span class="line">- category</span><br><span class="line">- tagcloud</span><br><span class="line">- weibo</span><br><span class="line">- blogroll</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">excerpt_link: 阅读全文 #替换为中文</span><br><span class="line"></span><br><span class="line">plugins: </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">twitter: #右边栏要显示twitter展示的话，需要在此设置</span><br><span class="line">  username: moxie198</span><br><span class="line">  show_replies: false</span><br><span class="line">  tweet_count: 5</span><br><span class="line"></span><br><span class="line">addthis: #SNS分享，身在天朝，当然用“百度分享”，暂时默认，后面会介绍</span><br><span class="line">  enable: true</span><br><span class="line">  pubid:</span><br><span class="line">  facebook: true</span><br><span class="line">  twitter: true</span><br><span class="line">  google: true</span><br><span class="line">  pinterest: true</span><br><span class="line"></span><br><span class="line">fancybox: true #图片效果，默认</span><br><span class="line"></span><br><span class="line">google_analytics: #要使用google_analytics进行统计的话，这里需要配置ID，暂时默认，后面介绍</span><br><span class="line">rss:  #生成RSS，需要配置路径，暂时默认，后面介绍</span><br></pre></td></tr></table></figure>
+<p>为了能够使Hexo部署到GitHub上，需要安装一个插件：(在执行 hexo deploy 后,出现 error deployer not found:github 的错误也是这个原因。)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<p>下面是一些常用命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hexo new &quot;postName&quot; #新建文章</span><br><span class="line">hexo new page &quot;pageName&quot; #新建页面</span><br><span class="line">hexo generate #生成静态页面至public目录</span><br><span class="line">hexo server #开启预览访问端口（默认端口4000，&apos;ctrl + c&apos;关闭server）</span><br><span class="line">hexo deploy #将.deploy目录部署到GitHub</span><br></pre></td></tr></table></figure></p>
+<p>常用复合命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo deploy -g</span><br><span class="line">hexo server -g</span><br></pre></td></tr></table></figure>
+<p>简写：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo n == hexo new</span><br><span class="line">hexo g == hexo generate</span><br><span class="line">hexo s == hexo server</span><br><span class="line">hexo d == hexo deploy</span><br></pre></td></tr></table></figure></p>
+
+  </div>  
+  <footer class="article-item-fn clearfix">
+      <div class="fl">
+        
+  
+  <span class="post-categories"><i class="iconfont">&#xe601;</i><a href="/categories/前端/">前端</a></span>
+
+        
+  
+  <span class="post-tags"><i class="iconfont">&#xe602;</i><a href="/tags/Hexo/">Hexo</a></span>
+
+      </div>
+      
+  </footer>
+  </div>
+  <aside class="article-top-meta fr">
+    <span class="posted-on">
+      
+    </span>
+  </aside>
+</article>
+
+
+
+
+
+    </div>
+</section>
+<footer id="colophon" class="site-footer" role="contentinfo"><p class="site-info">
+  Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a> and
+  Theme by <a href="https://www.cheris.cn" target="_blank">Cheris</a>
+  <br>
+  
+  &copy; Copyright 2019 cheris
+  
+</p>
+</footer>
+
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-37234333-2', 'auto');
+    ga('send', 'pageview');
+
+</script>
+
+
+<script type="text/javascript" src="//tajs.qq.com/stats?sId=58158453" charset="UTF-8"></script>
+
+</body>
+</html>
